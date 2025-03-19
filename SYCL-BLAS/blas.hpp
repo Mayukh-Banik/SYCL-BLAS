@@ -32,21 +32,6 @@ void axpy(uint64_t N, A alpha, B *x, int incX, C *y, int incY, sycl::queue q = s
         .wait();
 }
 
-template <typename A, typename B, typename C>
-void axpy(uint64_t N, A alpha, sycl::buffer<B, 1> &x, int incX, sycl::buffer<C, 1> &y, int incY, sycl::queue q = sycl::queue())
-{
-    q.submit([&](sycl::handler &handler)
-             {
-                auto x_acc = sycl::accessor(x, handler, sycl::read_only);
-                auto y_acc = sycl::accessor(y, handler, sycl::read_write);
-        handler.parallel_for(sycl::range<1>(N), [=](sycl::id<1> i) {
-            int64_t Xindex = i[0] * incX;
-            int64_t Yindex = i[0] * incY;
-            y_acc[Yindex] += (C) alpha * (C) x_acc[Xindex];
-        }); })
-        .wait();
-}
-
 template <typename A, typename B>
 void scal(uint64_t N, A alpha, B *x, int incX = 1, sycl::queue q = sycl::queue())
 {
@@ -58,19 +43,6 @@ void scal(uint64_t N, A alpha, B *x, int incX = 1, sycl::queue q = sycl::queue()
                 int64_t Xindex = i[0] * incX;
                 x[Xindex] = (B) alpha * x[Xindex]; });
          })
-        .wait();
-}
-
-template <typename A, typename B>
-void scal(uint64_t N, A alpha, sycl::buffer<B, 1> &x, int incX = 1, sycl::queue q = sycl::queue())
-{
-    q.submit([&](sycl::handler &handler)
-             {
-        auto x_acc = sycl::accessor(x, handler, sycl::read_write);
-        handler.parallel_for(sycl::range<1>(N), [=](sycl::id<1> i) {
-            int64_t Xindex = i[0] * incX;
-            x_acc[Xindex] = static_cast<B>(alpha) * x_acc[Xindex];
-        }); })
         .wait();
 }
 
@@ -86,21 +58,6 @@ void copy(uint64_t N, B *x, int incX, C *y, int incY, sycl::queue q = sycl::queu
                 int64_t Yindex = i[0] * incY;
                 y[Yindex] = (C) x[Xindex]; });
          })
-        .wait();
-}
-
-template <typename B, typename C>
-void copy(uint64_t N, sycl::buffer<B, 1> &x, int incX, sycl::buffer<C, 1> &y, int incY, sycl::queue q = sycl::queue())
-{
-    q.submit([&](sycl::handler &handler)
-             {
-                auto x_acc = sycl::accessor(x, handler, sycl::read_only);
-                auto y_acc = sycl::accessor(y, handler, sycl::write_only);
-        handler.parallel_for(sycl::range<1>(N), [=](sycl::id<1> i) {
-            int64_t Xindex = i[0] * incX;
-            int64_t Yindex = i[0] * incY;
-            y_acc[Yindex] = (C) x_acc[Xindex];
-        }); })
         .wait();
 }
 
@@ -121,19 +78,42 @@ void swap(uint64_t N, B *x, int incX, C *y, int incY, sycl::queue q = sycl::queu
         .wait();
 }
 
-template <typename B, typename C>
-void swap(uint64_t N, sycl::buffer<B, 1> &x, int incX, sycl::buffer<C, 1> &y, int incY, sycl::queue q = sycl::queue())
+template <typename A, typename B, typename C>
+A dot(uint64_t N, B *x, int incX, C *y, int incY, sycl::queue q = sycl::queue())
 {
-    q.submit([&](sycl::handler &handler)
+    A *dotResult = sycl::malloc_device<A>(sizeof(A), q);
+    q.memset(dotResult, 0, sizeof(A)).wait();
+    q.submit([&](sycl::handler &cgh)
              {
-                auto x_acc = sycl::accessor(x, handler, sycl::read_write);
-                auto y_acc = sycl::accessor(y, handler, sycl::read_write);
-        handler.parallel_for(sycl::range<1>(N), [=](sycl::id<1> i) {
-            int64_t Xindex = i[0] * incX;
-            int64_t Yindex = i[0] * incY;
-            const C temp = (C) x_acc[Xindex];
-            x_acc[Xindex] = (B) y_acc[Yindex];
-            y_acc[Yindex] = temp;
-        }); })
+        auto alpha = sycl::reduction(dotResult, sycl::plus<A>());
+        cgh.parallel_for(sycl::range<1>(N), alpha, 
+            [=](sycl::id<1> idx, auto& sum) {
+                size_t x_idx = idx[0] * incX;
+                size_t y_idx = idx[0] * incY;
+                sum += static_cast<A>(x[x_idx] * y[y_idx]);
+            }); })
         .wait();
+    A result;
+    q.memcpy(&result, dotResult, sizeof(A)).wait();
+    sycl::free(dotResult, q);
+    return result;
+}
+
+template <typename B, typename A>
+B nrm2(uint64_t N, A *x, int incX = 1, sycl::queue q = sycl::queue())
+{
+    A *dotResult = sycl::malloc_device<A>(sizeof(A) * 1, q);
+    q.memset(dotResult, 0, sizeof(A)).wait();
+    q.submit([&](sycl::handler &cgh)
+             {
+        auto alpha = sycl::reduction(dotResult, sycl::plus<A>());
+        cgh.parallel_for(sycl::range<1>(N), alpha, 
+            [=](sycl::id<1> idx, auto& sum) {
+                sum += (x[incX * idx[0]] * x[incX * idx[0]]);
+            }); })
+        .wait();
+    A result;
+    q.memcpy(&result, dotResult, sizeof(A)).wait();
+    sycl::free(dotResult, q);
+    return (B) sycl::sqrt(result);
 }

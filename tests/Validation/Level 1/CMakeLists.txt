@@ -3,6 +3,7 @@ set(SOURCE_FILES
     copy.cpp
     scal.cpp
     swap.cpp
+    nrm2.cpp
 )
 
 project(Level1 LANGUAGES CXX)
