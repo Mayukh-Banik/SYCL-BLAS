@@ -14,7 +14,7 @@
       "cacheVariables": {
         "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
         "CMAKE_CXX_COMPILER": "acpp",
-        "CMAKE_CXX_FLAGS": "-O2"
+        "CMAKE_CXX_FLAGS": "-O2 -std=c++17"
       }
     },
     {
