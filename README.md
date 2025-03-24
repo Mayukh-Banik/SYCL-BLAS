@@ -38,7 +38,7 @@
 
 ## Key Features
 
-NetLib Conformant BLAS implementation with Tuning/Function selection determined at run/compile time for multiple devices.
+NetLib Conformant BLAS implementation with Tuning/Function selection determined at run/compile time for parallelized computation.
 
 ## Installation
 
