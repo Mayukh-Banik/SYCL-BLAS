@@ -3,39 +3,20 @@
 #include <sycl/sycl.hpp>
 #include <complex>
 #include "../../Setup/Setup.hpp"
+#include "AXPY.hpp"
 
 namespace caxpyFunction
 {
-    void defaultCaxpyFunction(uint64_t N, float alpha, std::complex<float> *x, int incX, std::complex<float> *y, int incY, sycl::queue q);
+    #define PARAMETER_LIST uint64_t, float, std::complex<float> *, int, std::complex<float> *, int, sycl::queue
+    void defaultCaxpyFunction(PARAMETER_LIST);
 
-    typedef void (*CaxpyFunctionPointer)(uint64_t, float, std::complex<float> *, int, std::complex<float> *, int, sycl::queue);
+    typedef void (*CaxpyFunctionPointer)(PARAMETER_LIST);
 
-    CaxpyFunctionPointer funcTable[1] =
+    CaxpyFunctionPointer funcTable[] =
         {
             defaultCaxpyFunction,
     };
+    int defaultFunction = functionOptimDataBase::functionMap["caxpy"];
 
-    class CAXPY
-    {
-    private:
-        int defaultFunction = 0;
-
-    public:
-        CAXPY()
-        {
-            this->defaultFunction = functionOptimDataBase::functionMap["caxpy"];
-        }
-
-        void operator()(uint64_t N, float alpha, std::complex<float> *x, int incX, std::complex<float> *y, int incY, sycl::queue q)
-        {
-            funcTable[defaultFunction](N, alpha, x, incX, y, incY, q);
-        }
-
-        void operator()(uint64_t N, float alpha, std::complex<float> *x, int incX, std::complex<float> *y, int incY, sycl::queue q, int index)
-        {
-            funcTable[index](N, alpha, x, incX, y, incY, q);
-        }
-    };
-
-    CAXPY caxpyClass;
+    #undef PARAMETER_LIST
 }
