@@ -3,7 +3,7 @@
 #include <sycl/sycl.hpp>
 #include <cstdint>
 #include <utility>
-#include "../UsefulFunctions.hpp"
+#include "../../Setup/UsefulFunctions.hpp"
 
 #define DEFAULT_FUNCTION_INDEX 0
 

@@ -5,7 +5,7 @@
 #include "../../Setup/Setup.hpp"
 #include "AXPY.hpp"
 
-namespace caxpyFunction
+namespace caxpyFunc
 {
     #define PARAMETER_LIST uint64_t, float, std::complex<float> *, int, std::complex<float> *, int, sycl::queue
     void defaultCaxpyFunction(PARAMETER_LIST);

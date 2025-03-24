@@ -5,14 +5,14 @@
 #include "../../Setup/Setup.hpp"
 #include "AXPY.hpp"
 
-namespace daxpyFunction
+namespace daxpyFunc
 {
     #define PARAMETER_LIST uint64_t N, double alpha, double *x, int incX, double *y, int incY, sycl::queue q
     void defaultDaxpyFunction(PARAMETER_LIST);
 
     typedef void (*DaxpyFunctionPointer)(PARAMETER_LIST);
 
-    DaxpyFunctionPointer funcTable[1] =
+    DaxpyFunctionPointer funcTable[] =
         {
             defaultDaxpyFunction,
     };

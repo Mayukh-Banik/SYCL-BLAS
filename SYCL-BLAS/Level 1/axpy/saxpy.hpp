@@ -4,7 +4,7 @@
 #include "../../Setup/Setup.hpp"
 #include "AXPY.hpp"
 
-namespace saxpyFunction
+namespace saxpyFunc
 {
 #define PARAMETER_LIST uint64_t, float, float *, int, float *, int, sycl::queue
     void defaultSaxpyFunction(PARAMETER_LIST);
@@ -13,7 +13,7 @@ namespace saxpyFunction
 
     SaxpyFunctionPointer funcTable[] =
         {
-            [DEFAULT_FUNCTION_INDEX] = defaultSaxpyFunction,
+            defaultSaxpyFunction,
     };
 
     int defaultFunction = functionOptimDataBase::functionMap["saxpy"];

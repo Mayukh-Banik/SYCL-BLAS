@@ -5,7 +5,7 @@ namespace sblas
 {
     void daxpy(uint64_t N, double alpha, double *x, int incX, double *y, int incY, sycl::queue q, bool Async)
     {
-        functionSelector<daxpyFunction::funcTable>(daxpyFunction::defaultFunction, N, alpha, x, incX, y, incY, q);
+        functionSelector<daxpyFunc::funcTable>(daxpyFunc::defaultFunction, N, alpha, x, incX, y, incY, q);
         if (!Async)
         {
             q.wait();
@@ -13,7 +13,7 @@ namespace sblas
     }
 }
 
-namespace daxpyFunction
+namespace daxpyFunc
 {
     void defaultDaxpyFunction(uint64_t N, double alpha, double *x, int incX, double *y, int incY, sycl::queue q)
     {
