@@ -5,9 +5,15 @@
 #include <sycl/sycl.hpp>
 #include <vector>
 
+/**
+ * Datbase for all platforms and optimal functions.
+ */
 namespace functionOptimDataBase
 {
 
+    /**
+     * Name for all BLAS functions and their respective names
+     */
     const std::vector<std::string> BLAS_NAMES =
         {
             // Level 1 BLAS
@@ -51,6 +57,9 @@ namespace functionOptimDataBase
             "cherk", "zherk",
             "cher2k", "zher2k"};
 
+            /**
+             * Tuned platforms show up here. The method is Platform Name : {Function Name : Function Index}
+             */
     const std::unordered_map<std::string, std::unordered_map<std::string, int>> optimizedFunctionDatabase =
         {
             // {"AdaptiveCpp OpenMP host device",
@@ -91,5 +100,8 @@ namespace functionOptimDataBase
         }
     };
 
+    /**
+     * Static otherwise causes compilation errors.
+     */
     static OptimizedFunctionHashMap functionMap;
 }

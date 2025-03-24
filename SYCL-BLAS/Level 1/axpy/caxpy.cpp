@@ -3,9 +3,9 @@
 
 namespace sblas
 {
-    void caxpy(uint64_t N, float alpha, std::complex<float> *x, int incX, std::complex<float> *y, int incY, sycl::queue q, bool Async)
+    void caxpy(uint64_t N, float alpha, std::complex<float> *x, int incX, std::complex<float> *y, int incY, sycl::queue q, bool Async, int index)
     {
-        functionSelector<caxpyFunc::funcTable>(caxpyFunc::defaultFunction, N, alpha, x, incX, y, incY, q);
+        functionSelector<caxpyFunc::funcTable>(index == -1 ? caxpyFunc::defaultFunction : index, N, alpha, x, incX, y, incY, q);
         if (!Async)
         {
             q.wait();

@@ -97,6 +97,6 @@ This software uses the following open source packages:
 
 ---
 
-> GitHub [@Mayukh-Banik](https://github.com/Mayukh-Banik)
- <!-- &nbsp;&middot;&nbsp; -->
+> GitHub [@Mayukh-Banik](https://github.com/Mayukh-Banik) &nbsp;&middot;&nbsp;
+> Email mayukh1banik@gmail.com (Contact for Job Offers/Miscellaneous queries)
 
