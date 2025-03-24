@@ -1,9 +1,9 @@
 set(SOURCE_FILES
     axpy.cpp
-    copy.cpp
-    scal.cpp
-    swap.cpp
-    nrm2.cpp
+    # copy.cpp
+    # scal.cpp
+    # swap.cpp
+    # nrm2.cpp
 )
 
 project(Level1 LANGUAGES CXX)

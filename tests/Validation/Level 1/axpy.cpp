@@ -40,13 +40,14 @@ protected:
 TEST_F(AXPY, axpy_raw)
 {
     int alpha = 1;
-    axpy(LENGTH, alpha, x, 1, y, 1, q);
+    sblas::saxpy(LENGTH, alpha, x, 1, y, 1, q);
     for (int i = 0; i < LENGTH; i++)
     {
         ASSERT_EQ(y_expected[i] + alpha * x[i], y[i])
-        << "x[i]" << x[i] << std::endl;
+        << "x[i]" << x[i] << "y[i]" << y[i] << std::endl;
     }
 }
+
 
 #undef LENGTH
 #undef DATA_TYPE

@@ -10,3 +10,4 @@ if(ENABLE_TESTING)
     add_subdirectory(extern/googletest)
     add_subdirectory(tests)
 endif()
+
