@@ -1,6 +1,5 @@
 #pragma once
 
-#include <complex>
 #include <sycl/sycl.hpp>
 #include <cstdint>
 #include "../../Setup/UsefulFunctions.hpp"

@@ -2,7 +2,6 @@
 
 #include <sycl/sycl.hpp>
 #include "../../Setup/Setup.hpp"
-#include <complex>
 #define NUMBER_OF_FUNCTIONS 1
 
 namespace dcopyFunc
