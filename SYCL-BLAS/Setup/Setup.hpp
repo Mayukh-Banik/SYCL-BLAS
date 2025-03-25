@@ -57,9 +57,9 @@ namespace functionOptimDataBase
             "cherk", "zherk",
             "cher2k", "zher2k"};
 
-            /**
-             * Tuned platforms show up here. The method is Platform Name : {Function Name : Function Index}
-             */
+    /**
+     * Tuned platforms show up here. The method is Platform Name : {Function Name : Function Index}
+     */
     const std::unordered_map<std::string, std::unordered_map<std::string, int>> optimizedFunctionDatabase =
         {
             // {"AdaptiveCpp OpenMP host device",
@@ -68,14 +68,16 @@ namespace functionOptimDataBase
     class OptimizedFunctionHashMap
     {
     private:
+        /**
+         * Stores all function names and mappings to optimal function number
+         */
         std::unordered_map<std::string, int> optimalFunctionalHashMap;
-        std::string defaultDevice;
 
     public:
         OptimizedFunctionHashMap()
         {
             sycl::queue q;
-            defaultDevice = q.get_device().get_info<sycl::info::device::name>();
+            std::string defaultDevice = q.get_device().get_info<sycl::info::device::name>();
             for (const std::string &a : BLAS_NAMES)
             {
                 optimalFunctionalHashMap[a] = 0;

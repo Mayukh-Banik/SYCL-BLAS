@@ -97,6 +97,7 @@ This graph shows which files directly or indirectly include this file:</div>
 Functions</h2></td></tr>
 <tr class="memitem:a1494d7abe818b2a71af63610332d55d1" id="r_a1494d7abe818b2a71af63610332d55d1"><td class="memTemplParams" colspan="2">template&lt;auto * FuncTable, typename... Args&gt; </td></tr>
 <tr class="memitem:a1494d7abe818b2a71af63610332d55d1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="UsefulFunctions_8hpp.html#a1494d7abe818b2a71af63610332d55d1">functionSelector</a> (int functionNumber, Args &amp;&amp;...args)</td></tr>
+<tr class="memdesc:a1494d7abe818b2a71af63610332d55d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls a function from a function table based on the given function number.  <br /></td></tr>
 <tr class="separator:a1494d7abe818b2a71af63610332d55d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -127,6 +128,23 @@ template&lt;auto * FuncTable, typename... Args&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Calls a function from a function table based on the given function number. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">FuncTable</td><td>A pointer to an array of function pointers. </td></tr>
+    <tr><td class="paramname">Args</td><td>Variadic template parameters representing the argument types of the function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">functionNumber</td><td>The index of the function to call from the function table. </td></tr>
+    <tr><td class="paramname">args</td><td>Arguments to be forwarded to the selected function.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>This function assumes that the function table is properly initialized and that functionNumber is within valid bounds. </dd></dl>
 
 </div>
 </div>

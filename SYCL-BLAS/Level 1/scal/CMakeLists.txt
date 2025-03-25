@@ -1,9 +1,9 @@
 target_sources(SYCL-BLAS
     PRIVATE
-    # ${CMAKE_CURRENT_SOURCE_DIR}/cscal.cpp
-    # ${CMAKE_CURRENT_SOURCE_DIR}/csscal.cpp
-    # ${CMAKE_CURRENT_SOURCE_DIR}/dscal.cpp
-    # ${CMAKE_CURRENT_SOURCE_DIR}/sscal.cpp
-    # ${CMAKE_CURRENT_SOURCE_DIR}/zdscal.cpp
-    # ${CMAKE_CURRENT_SOURCE_DIR}/zscal.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/cscal.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/csscal.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dscal.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/sscal.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/zdscal.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/zscal.cpp
     )

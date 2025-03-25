@@ -5,6 +5,33 @@
 #include <cmath>
 #include <complex>
 
+/** 
+ * @mainpage MyProject Documentation
+ *
+ * @section intro_sec Introduction
+ *
+ * This is an example project demonstrating how to add documentation to the main page.
+ *
+ * @section install_sec Installation
+ *
+ * 1. Clone the repository
+ * 2. Run `make`
+ * 3. Execute `./myproject`
+ *
+ * @section usage_sec Usage
+ *
+ * Here's how you use this program:
+ * @code
+ * MyClass obj;
+ * obj.doSomething();
+ * @endcode
+ *
+ * @author Your Name
+ * @version 1.0
+ * @date March 2025
+ */
+
+
 /**
  * @namespace sblas
  *
@@ -88,5 +115,83 @@ namespace sblas
      * @param index Index for testing/tuning purposes (default is -1).
      */
     void zaxpy(uint64_t N, double alpha, std::complex<double> *x, int incX, std::complex<double> *y, int incY, sycl::queue q = sycl::queue(), bool Async = false, int index = -1);
+
+    /**
+     * @brief Scales a complex single-precision vector by a complex scalar using SYCL.
+     *
+     * @param N The number of elements in the vector.
+     * @param alpha The complex scalar multiplier.
+     * @param x Pointer to the input/output complex vector.
+     * @param incX Stride between consecutive elements in x.
+     * @param q The SYCL queue to execute the operation (default: new SYCL queue).
+     * @param Async Whether to execute asynchronously (currently unused).
+     * @param index Optional index parameter (default: -1, currently unused).
+     */
+    void cscal(uint64_t N, std::complex<float> alpha, std::complex<float> *x, int incX, sycl::queue q = sycl::queue(), bool Async = false, int index = -1);
+
+    /**
+     * @brief Scales a complex single-precision vector by a real scalar using SYCL.
+     *
+     * @param N The number of elements in the vector.
+     * @param alpha The real scalar multiplier.
+     * @param x Pointer to the input/output complex vector.
+     * @param incX Stride between consecutive elements in x.
+     * @param q The SYCL queue to execute the operation (default: new SYCL queue).
+     * @param Async Whether to execute asynchronously (currently unused).
+     * @param index Optional index parameter (default: -1, currently unused).
+     */
+    void csscal(uint64_t N, float alpha, std::complex<float> *x, int incX, sycl::queue q = sycl::queue(), bool Async = false, int index = -1);
+
+    /**
+     * @brief Scales a double-precision vector by a real scalar using SYCL.
+     *
+     * @param N The number of elements in the vector.
+     * @param alpha The real scalar multiplier.
+     * @param x Pointer to the input/output double-precision vector.
+     * @param incX Stride between consecutive elements in x.
+     * @param q The SYCL queue to execute the operation (default: new SYCL queue).
+     * @param Async Whether to execute asynchronously (currently unused).
+     * @param index Optional index parameter (default: -1, currently unused).
+     */
+    void dscal(uint64_t N, double alpha, double *x, int incX, sycl::queue q = sycl::queue(), bool Async = false, int index = -1);
+
+    /**
+     * @brief Scales a single-precision vector by a real scalar using SYCL.
+     *
+     * @param N The number of elements in the vector.
+     * @param alpha The real scalar multiplier.
+     * @param x Pointer to the input/output single-precision vector.
+     * @param incX Stride between consecutive elements in x.
+     * @param q The SYCL queue to execute the operation (default: new SYCL queue).
+     * @param Async Whether to execute asynchronously (currently unused).
+     * @param index Optional index parameter (default: -1, currently unused).
+     */
+    void sscal(uint64_t N, float alpha, float *x, int incX, sycl::queue q = sycl::queue(), bool Async = false, int index = -1);
+
+    /**
+     * @brief Scales a complex double-precision vector by a real scalar using SYCL.
+     *
+     * @param N The number of elements in the vector.
+     * @param alpha The real scalar multiplier.
+     * @param x Pointer to the input/output complex double-precision vector.
+     * @param incX Stride between consecutive elements in x.
+     * @param q The SYCL queue to execute the operation (default: new SYCL queue).
+     * @param Async Whether to execute asynchronously (currently unused).
+     * @param index Optional index parameter (default: -1, currently unused).
+     */
+    void zdscal(uint64_t N, double alpha, std::complex<double> *x, int incX, sycl::queue q = sycl::queue(), bool Async = false, int index = -1);
+
+    /**
+     * @brief Scales a complex double-precision vector by a complex scalar using SYCL.
+     *
+     * @param N The number of elements in the vector.
+     * @param alpha The complex scalar multiplier.
+     * @param x Pointer to the input/output complex double-precision vector.
+     * @param incX Stride between consecutive elements in x.
+     * @param q The SYCL queue to execute the operation (default: new SYCL queue).
+     * @param Async Whether to execute asynchronously (currently unused).
+     * @param index Optional index parameter (default: -1, currently unused).
+     */
+    void zdscal(uint64_t N, std::complex<double> alpha, std::complex<double> *x, int incX, sycl::queue q = sycl::queue(), bool Async = false, int index = -1);
 
 }

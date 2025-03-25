@@ -75,7 +75,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">AXPY.hpp File Reference</div></div>
 </div><!--header-->
@@ -97,38 +96,21 @@ This graph shows which files directly or indirectly include this file:</div>
 </div>
 <p><a href="AXPY_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ac50267d50b94a2412d8fbe953737e707" id="r_ac50267d50b94a2412d8fbe953737e707"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AXPY_8hpp.html#ac50267d50b94a2412d8fbe953737e707">DEFAULT_FUNCTION_INDEX</a>&#160;&#160;&#160;0</td></tr>
-<tr class="separator:ac50267d50b94a2412d8fbe953737e707"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a4802bdc8d73eaca0e0590b0f342cc7a6" id="r_a4802bdc8d73eaca0e0590b0f342cc7a6"><td class="memTemplParams" colspan="2">template&lt;typename A , typename B  = A, typename C  = A&gt; </td></tr>
 <tr class="memitem:a4802bdc8d73eaca0e0590b0f342cc7a6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="AXPY_8hpp.html#a4802bdc8d73eaca0e0590b0f342cc7a6">simpleAxpy</a> (uint64_t N, A alpha, B *x, int incX, C *y, int incY, sycl::queue q)</td></tr>
+<tr class="memdesc:a4802bdc8d73eaca0e0590b0f342cc7a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the AXPY operation (y = alpha * x + y) on a vector using SYCL.  <br /></td></tr>
 <tr class="separator:a4802bdc8d73eaca0e0590b0f342cc7a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ebaa0141d043c08d2f52cc572637b01" id="r_a1ebaa0141d043c08d2f52cc572637b01"><td class="memTemplParams" colspan="2">template&lt;typename A , typename B  = A, typename C  = A&gt; </td></tr>
 <tr class="memitem:a1ebaa0141d043c08d2f52cc572637b01"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="AXPY_8hpp.html#a1ebaa0141d043c08d2f52cc572637b01">simpleAxpy</a> (uint64_t N, A alpha, std::complex&lt; B &gt; *x, int incX, std::complex&lt; C &gt; *y, int incY, sycl::queue q)</td></tr>
+<tr class="memdesc:a1ebaa0141d043c08d2f52cc572637b01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the AXPY operation (y = alpha * x) for complex numbers using SYCL.  <br /></td></tr>
 <tr class="separator:a1ebaa0141d043c08d2f52cc572637b01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6f1f5d27685badfaa708b9c02ed0e7c" id="r_af6f1f5d27685badfaa708b9c02ed0e7c"><td class="memTemplParams" colspan="2">template&lt;typename A , typename B  = A, typename C  = A&gt; </td></tr>
 <tr class="memitem:af6f1f5d27685badfaa708b9c02ed0e7c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="AXPY_8hpp.html#af6f1f5d27685badfaa708b9c02ed0e7c">simpleAxpy</a> (uint64_t N, std::complex&lt; A &gt; alpha, std::complex&lt; B &gt; *x, int incX, std::complex&lt; C &gt; *y, int incY, sycl::queue q)</td></tr>
+<tr class="memdesc:af6f1f5d27685badfaa708b9c02ed0e7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the AXPY operation (y = alpha * x) for complex scalar and complex vectors using SYCL.  <br /></td></tr>
 <tr class="separator:af6f1f5d27685badfaa708b9c02ed0e7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ac50267d50b94a2412d8fbe953737e707" name="ac50267d50b94a2412d8fbe953737e707"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac50267d50b94a2412d8fbe953737e707">&#9670;&#160;</a></span>DEFAULT_FUNCTION_INDEX</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DEFAULT_FUNCTION_INDEX&#160;&#160;&#160;0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a4802bdc8d73eaca0e0590b0f342cc7a6" name="a4802bdc8d73eaca0e0590b0f342cc7a6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4802bdc8d73eaca0e0590b0f342cc7a6">&#9670;&#160;</a></span>simpleAxpy() <span class="overload">[1/3]</span></h2>
@@ -187,6 +169,28 @@ template&lt;typename A , typename B  = A, typename C  = A&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Performs the AXPY operation (y = alpha * x + y) on a vector using SYCL. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">A</td><td>The type of the scalar alpha. </td></tr>
+    <tr><td class="paramname">B</td><td>The type of elements in the input vector x (default: A). </td></tr>
+    <tr><td class="paramname">C</td><td>The type of elements in the output vector y (default: A). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">N</td><td>The number of elements in the vectors. </td></tr>
+    <tr><td class="paramname">alpha</td><td>The scalar multiplier. </td></tr>
+    <tr><td class="paramname">x</td><td>Pointer to the input vector. </td></tr>
+    <tr><td class="paramname">incX</td><td>Stride between consecutive elements in x. </td></tr>
+    <tr><td class="paramname">y</td><td>Pointer to the output vector. </td></tr>
+    <tr><td class="paramname">incY</td><td>Stride between consecutive elements in y. </td></tr>
+    <tr><td class="paramname">q</td><td>The SYCL queue to execute the operation. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -248,6 +252,28 @@ template&lt;typename A , typename B  = A, typename C  = A&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Performs the AXPY operation (y = alpha * x) for complex numbers using SYCL. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">A</td><td>The type of the scalar alpha. </td></tr>
+    <tr><td class="paramname">B</td><td>The type of elements in the input complex vector x (default: A). </td></tr>
+    <tr><td class="paramname">C</td><td>The type of elements in the output complex vector y (default: A). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">N</td><td>The number of elements in the vectors. </td></tr>
+    <tr><td class="paramname">alpha</td><td>The scalar multiplier. </td></tr>
+    <tr><td class="paramname">x</td><td>Pointer to the input complex vector. </td></tr>
+    <tr><td class="paramname">incX</td><td>Stride between consecutive elements in x. </td></tr>
+    <tr><td class="paramname">y</td><td>Pointer to the output complex vector. </td></tr>
+    <tr><td class="paramname">incY</td><td>Stride between consecutive elements in y. </td></tr>
+    <tr><td class="paramname">q</td><td>The SYCL queue to execute the operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="af6f1f5d27685badfaa708b9c02ed0e7c" name="af6f1f5d27685badfaa708b9c02ed0e7c"></a>
@@ -307,6 +333,28 @@ template&lt;typename A , typename B  = A, typename C  = A&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Performs the AXPY operation (y = alpha * x) for complex scalar and complex vectors using SYCL. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">A</td><td>The type of the complex scalar alpha. </td></tr>
+    <tr><td class="paramname">B</td><td>The type of elements in the input complex vector x (default: A). </td></tr>
+    <tr><td class="paramname">C</td><td>The type of elements in the output complex vector y (default: A). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">N</td><td>The number of elements in the vectors. </td></tr>
+    <tr><td class="paramname">alpha</td><td>The complex scalar multiplier. </td></tr>
+    <tr><td class="paramname">x</td><td>Pointer to the input complex vector. </td></tr>
+    <tr><td class="paramname">incX</td><td>Stride between consecutive elements in x. </td></tr>
+    <tr><td class="paramname">y</td><td>Pointer to the output complex vector. </td></tr>
+    <tr><td class="paramname">incY</td><td>Stride between consecutive elements in y. </td></tr>
+    <tr><td class="paramname">q</td><td>The SYCL queue to execute the operation. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

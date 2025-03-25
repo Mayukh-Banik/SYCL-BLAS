@@ -85,66 +85,31 @@ $(document).ready(function() { init_codefold(0); });
 <a href="sscal_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;sycl/sycl.hpp&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;complex&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;../../Setup/Setup.hpp&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="sscal_8hpp.html#a54d9899b78c4febc553f06973917e3b0">    7</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="sscal_8hpp.html#a54d9899b78c4febc553f06973917e3b0">sscal</a>(uint64_t N, <span class="keywordtype">float</span> alpha, <span class="keywordtype">float</span>* x, <span class="keywordtype">int</span> incX, sycl::queue q = sycl::queue(), <span class="keywordtype">bool</span> Async = <span class="keyword">false</span>);</div>
-<div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="namespacesscalFunction.html">    8</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacesscalFunction.html">sscalFunction</a></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;../../Setup/Setup.hpp&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="SCAL_8hpp.html">SCAL.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;complex&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceSscalFunc.html">SscalFunc</a></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="namespacesscalFunction.html#a9f61d79f56390d426e4ff473e4cd7447">   10</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespacesscalFunction.html#a9f61d79f56390d426e4ff473e4cd7447">defaultSscalFunction</a>(uint64_t N, <span class="keywordtype">float</span> alpha, <span class="keywordtype">float</span> *x, <span class="keywordtype">int</span> incX, sycl::queue q);</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="namespacesscalFunction.html#ab59a241a50a8738aedf38cb11a03aa96">   12</a></span>    <span class="keyword">typedef</span> void (*<a class="code hl_typedef" href="namespacesscalFunction.html#ab59a241a50a8738aedf38cb11a03aa96">SaxpyFunctionPointer</a>)(uint64_t, float, <span class="keywordtype">float</span> *, int, sycl::queue);</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="namespacesscalFunction.html#a09406cfcd8a110edb9035fbaee908273">   14</a></span>    <a class="code hl_typedef" href="namespacesscalFunction.html#ab59a241a50a8738aedf38cb11a03aa96">SaxpyFunctionPointer</a> <a class="code hl_variable" href="namespacesscalFunction.html#a09406cfcd8a110edb9035fbaee908273">funcTable</a>[1] =</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            <a class="code hl_function" href="namespacesscalFunction.html#a9f61d79f56390d426e4ff473e4cd7447">defaultSscalFunction</a>,</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    };</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="sscal_8hpp.html#ad928f8aac292cb1ba422581c26f77957">   10</a></span><span class="preprocessor">#define PARAMETER_LIST uint64_t, float, float*, int, sycl::queue</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="namespaceSscalFunc.html#a7751d67ea386465cb1847dcc05e7bc94">   11</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceSscalFunc.html#a98f19a390db2c6dd8e1038c4cda74703">defaultSscalFunction</a>(<a class="code hl_define" href="caxpy_8hpp.html#ad928f8aac292cb1ba422581c26f77957">PARAMETER_LIST</a>);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="namespaceSscalFunc.html#ac1cf60b6bcc6a1ef1f92d5e7d3158f61">   12</a></span>    <span class="keyword">typedef</span> void (*<a class="code hl_typedef" href="namespaceSscalFunc.html#ac1cf60b6bcc6a1ef1f92d5e7d3158f61">SscalFunctionPointer</a>)(<a class="code hl_define" href="caxpy_8hpp.html#ad928f8aac292cb1ba422581c26f77957">PARAMETER_LIST</a>);</div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="namespaceSscalFunc.html#a99bbbcd7259c51d1cd8216d79789f684">   13</a></span>    <a class="code hl_typedef" href="namespaceSscalFunc.html#ac1cf60b6bcc6a1ef1f92d5e7d3158f61">SscalFunctionPointer</a> <a class="code hl_variable" href="namespaceSscalFunc.html#a99bbbcd7259c51d1cd8216d79789f684">funcTable</a>[] =</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            <a class="code hl_function" href="namespaceSscalFunc.html#a98f19a390db2c6dd8e1038c4cda74703">defaultSscalFunction</a>,</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    };</div>
 </div>
-<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classsscalFunction_1_1SAXPY.html">   18</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classsscalFunction_1_1SAXPY.html">SAXPY</a></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordtype">int</span> defaultFunction = 0;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">public</span>:</div>
-<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classsscalFunction_1_1SAXPY.html#a23700db3297783f5c9377ca5c5e5ec3e">   24</a></span>        <a class="code hl_function" href="classsscalFunction_1_1SAXPY.html#a23700db3297783f5c9377ca5c5e5ec3e">SAXPY</a>()</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            this-&gt;defaultFunction = functionOptimDataBase::functionMap[<span class="stringliteral">&quot;saxpy&quot;</span>];</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        }</div>
-</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classsscalFunction_1_1SAXPY.html#a1e672f1ee5414fb07d05289fa36aa4e9">   29</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classsscalFunction_1_1SAXPY.html#a1e672f1ee5414fb07d05289fa36aa4e9">operator()</a>(uint64_t N, <span class="keywordtype">float</span> alpha, <span class="keywordtype">float</span> *x, <span class="keywordtype">int</span> incX, <span class="keywordtype">float</span> *y, <span class="keywordtype">int</span> incY, sycl::queue q)</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <a class="code hl_variable" href="namespacesscalFunction.html#a09406cfcd8a110edb9035fbaee908273">funcTable</a>[defaultFunction](N, alpha, x, incX, q);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        }</div>
-</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classsscalFunction_1_1SAXPY.html#adf91e6cafc7171201ebe924d12e010cc">   34</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classsscalFunction_1_1SAXPY.html#adf91e6cafc7171201ebe924d12e010cc">operator()</a>(uint64_t N, <span class="keywordtype">float</span> alpha, <span class="keywordtype">float</span> *x, <span class="keywordtype">int</span> incX, <span class="keywordtype">float</span> *y, <span class="keywordtype">int</span> incY, sycl::queue q, <span class="keywordtype">int</span> index)</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <a class="code hl_variable" href="namespacesscalFunction.html#a09406cfcd8a110edb9035fbaee908273">funcTable</a>[index](N, alpha, x, incX, q);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        }</div>
-</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    };</div>
-</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="namespacesscalFunction.html#a8f33385cc230056fc7b51e7810239711">   40</a></span>    <a class="code hl_class" href="classsscalFunction_1_1SAXPY.html">SAXPY</a> <a class="code hl_variable" href="namespacesscalFunction.html#a8f33385cc230056fc7b51e7810239711">saxpyClass</a>;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
-</div>
-<div class="ttc" id="aclasssscalFunction_1_1SAXPY_html"><div class="ttname"><a href="classsscalFunction_1_1SAXPY.html">sscalFunction::SAXPY</a></div><div class="ttdef"><b>Definition</b> sscal.hpp:19</div></div>
-<div class="ttc" id="aclasssscalFunction_1_1SAXPY_html_a1e672f1ee5414fb07d05289fa36aa4e9"><div class="ttname"><a href="classsscalFunction_1_1SAXPY.html#a1e672f1ee5414fb07d05289fa36aa4e9">sscalFunction::SAXPY::operator()</a></div><div class="ttdeci">void operator()(uint64_t N, float alpha, float *x, int incX, float *y, int incY, sycl::queue q)</div><div class="ttdef"><b>Definition</b> sscal.hpp:29</div></div>
-<div class="ttc" id="aclasssscalFunction_1_1SAXPY_html_a23700db3297783f5c9377ca5c5e5ec3e"><div class="ttname"><a href="classsscalFunction_1_1SAXPY.html#a23700db3297783f5c9377ca5c5e5ec3e">sscalFunction::SAXPY::SAXPY</a></div><div class="ttdeci">SAXPY()</div><div class="ttdef"><b>Definition</b> sscal.hpp:24</div></div>
-<div class="ttc" id="aclasssscalFunction_1_1SAXPY_html_adf91e6cafc7171201ebe924d12e010cc"><div class="ttname"><a href="classsscalFunction_1_1SAXPY.html#adf91e6cafc7171201ebe924d12e010cc">sscalFunction::SAXPY::operator()</a></div><div class="ttdeci">void operator()(uint64_t N, float alpha, float *x, int incX, float *y, int incY, sycl::queue q, int index)</div><div class="ttdef"><b>Definition</b> sscal.hpp:34</div></div>
-<div class="ttc" id="anamespacesscalFunction_html"><div class="ttname"><a href="namespacesscalFunction.html">sscalFunction</a></div><div class="ttdef"><b>Definition</b> sscal.hpp:9</div></div>
-<div class="ttc" id="anamespacesscalFunction_html_a09406cfcd8a110edb9035fbaee908273"><div class="ttname"><a href="namespacesscalFunction.html#a09406cfcd8a110edb9035fbaee908273">sscalFunction::funcTable</a></div><div class="ttdeci">SaxpyFunctionPointer funcTable[1]</div><div class="ttdef"><b>Definition</b> sscal.hpp:14</div></div>
-<div class="ttc" id="anamespacesscalFunction_html_a8f33385cc230056fc7b51e7810239711"><div class="ttname"><a href="namespacesscalFunction.html#a8f33385cc230056fc7b51e7810239711">sscalFunction::saxpyClass</a></div><div class="ttdeci">SAXPY saxpyClass</div><div class="ttdef"><b>Definition</b> sscal.hpp:40</div></div>
-<div class="ttc" id="anamespacesscalFunction_html_a9f61d79f56390d426e4ff473e4cd7447"><div class="ttname"><a href="namespacesscalFunction.html#a9f61d79f56390d426e4ff473e4cd7447">sscalFunction::defaultSscalFunction</a></div><div class="ttdeci">void defaultSscalFunction(uint64_t N, float alpha, float *x, int incX, sycl::queue q)</div></div>
-<div class="ttc" id="anamespacesscalFunction_html_ab59a241a50a8738aedf38cb11a03aa96"><div class="ttname"><a href="namespacesscalFunction.html#ab59a241a50a8738aedf38cb11a03aa96">sscalFunction::SaxpyFunctionPointer</a></div><div class="ttdeci">void(* SaxpyFunctionPointer)(uint64_t, float, float *, int, sycl::queue)</div><div class="ttdef"><b>Definition</b> sscal.hpp:12</div></div>
-<div class="ttc" id="asscal_8hpp_html_a54d9899b78c4febc553f06973917e3b0"><div class="ttname"><a href="sscal_8hpp.html#a54d9899b78c4febc553f06973917e3b0">sscal</a></div><div class="ttdeci">void sscal(uint64_t N, float alpha, float *x, int incX, sycl::queue q=sycl::queue(), bool Async=false)</div></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="namespaceSscalFunc.html#a2b20a7b4340adaebadcf101fa12a5fac">   17</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="namespaceSscalFunc.html#a2b20a7b4340adaebadcf101fa12a5fac">defaultFunction</a> = functionOptimDataBase::functionMap[<span class="stringliteral">&quot;sscal&quot;</span>];</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#undef PARAMETER_LIST</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>
+<div class="ttc" id="aSCAL_8hpp_html"><div class="ttname"><a href="SCAL_8hpp.html">SCAL.hpp</a></div></div>
+<div class="ttc" id="acaxpy_8hpp_html_ad928f8aac292cb1ba422581c26f77957"><div class="ttname"><a href="caxpy_8hpp.html#ad928f8aac292cb1ba422581c26f77957">PARAMETER_LIST</a></div><div class="ttdeci">#define PARAMETER_LIST</div><div class="ttdef"><b>Definition</b> caxpy.hpp:13</div></div>
+<div class="ttc" id="anamespaceSscalFunc_html"><div class="ttname"><a href="namespaceSscalFunc.html">SscalFunc</a></div><div class="ttdef"><b>Definition</b> sscal.cpp:17</div></div>
+<div class="ttc" id="anamespaceSscalFunc_html_a2b20a7b4340adaebadcf101fa12a5fac"><div class="ttname"><a href="namespaceSscalFunc.html#a2b20a7b4340adaebadcf101fa12a5fac">SscalFunc::defaultFunction</a></div><div class="ttdeci">int defaultFunction</div><div class="ttdef"><b>Definition</b> sscal.hpp:17</div></div>
+<div class="ttc" id="anamespaceSscalFunc_html_a98f19a390db2c6dd8e1038c4cda74703"><div class="ttname"><a href="namespaceSscalFunc.html#a98f19a390db2c6dd8e1038c4cda74703">SscalFunc::defaultSscalFunction</a></div><div class="ttdeci">void defaultSscalFunction(uint64_t N, float alpha, float *x, int incX, sycl::queue q)</div><div class="ttdef"><b>Definition</b> sscal.cpp:18</div></div>
+<div class="ttc" id="anamespaceSscalFunc_html_a99bbbcd7259c51d1cd8216d79789f684"><div class="ttname"><a href="namespaceSscalFunc.html#a99bbbcd7259c51d1cd8216d79789f684">SscalFunc::funcTable</a></div><div class="ttdeci">SscalFunctionPointer funcTable[]</div><div class="ttdef"><b>Definition</b> sscal.hpp:13</div></div>
+<div class="ttc" id="anamespaceSscalFunc_html_ac1cf60b6bcc6a1ef1f92d5e7d3158f61"><div class="ttname"><a href="namespaceSscalFunc.html#ac1cf60b6bcc6a1ef1f92d5e7d3158f61">SscalFunc::SscalFunctionPointer</a></div><div class="ttdeci">void(* SscalFunctionPointer)(PARAMETER_LIST)</div><div class="ttdef"><b>Definition</b> sscal.hpp:12</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -11,5 +11,5 @@ digraph "SYCL-BLAS"
   dir_4bdbafa1a890e85c566b99a7d5528745 [label="Level 1", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_4bdbafa1a890e85c566b99a7d5528745.html",tooltip=""];
   dir_2cf803bbad5736ac46e5b9bef0403cf0 [label="Setup", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_2cf803bbad5736ac46e5b9bef0403cf0.html",tooltip=""];
   }
-  dir_4bdbafa1a890e85c566b99a7d5528745->dir_2cf803bbad5736ac46e5b9bef0403cf0 [headlabel="6", labeldistance=1.5 headhref="dir_000001_000003.html" href="dir_000001_000003.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_4bdbafa1a890e85c566b99a7d5528745->dir_2cf803bbad5736ac46e5b9bef0403cf0 [headlabel="12", labeldistance=1.5 headhref="dir_000001_000003.html" href="dir_000001_000003.html" color="steelblue1" fontcolor="steelblue1"];
 }

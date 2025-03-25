@@ -16,5 +16,5 @@ digraph "SYCL-BLAS/Level 1"
   }
   }
   dir_5b26f3b77052ee5914eb9abdf5d2fb37->dir_2cf803bbad5736ac46e5b9bef0403cf0 [headlabel="5", labeldistance=1.5 headhref="dir_000000_000003.html" href="dir_000000_000003.html" color="steelblue1" fontcolor="steelblue1"];
-  dir_ba3c2169517eea9bea8909081c6e95b9->dir_2cf803bbad5736ac46e5b9bef0403cf0 [headlabel="1", labeldistance=1.5 headhref="dir_000002_000003.html" href="dir_000002_000003.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_ba3c2169517eea9bea8909081c6e95b9->dir_2cf803bbad5736ac46e5b9bef0403cf0 [headlabel="7", labeldistance=1.5 headhref="dir_000002_000003.html" href="dir_000002_000003.html" color="steelblue1" fontcolor="steelblue1"];
 }

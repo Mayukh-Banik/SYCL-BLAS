@@ -86,14 +86,14 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">template</span> &lt;<span class="keyword">auto</span> *FuncTable, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="UsefulFunctions_8hpp.html#a1494d7abe818b2a71af63610332d55d1">    6</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="UsefulFunctions_8hpp.html#a1494d7abe818b2a71af63610332d55d1">functionSelector</a>(<span class="keywordtype">int</span> functionNumber, Args &amp;&amp;...args)</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    FuncTable[functionNumber](std::forward&lt;Args&gt;(args)...);</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>}</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">template</span> &lt;<span class="keyword">auto</span> *FuncTable, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="UsefulFunctions_8hpp.html#a1494d7abe818b2a71af63610332d55d1">   17</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="UsefulFunctions_8hpp.html#a1494d7abe818b2a71af63610332d55d1">functionSelector</a>(<span class="keywordtype">int</span> functionNumber, Args &amp;&amp;...args)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    FuncTable[functionNumber](std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
 </div>
-<div class="ttc" id="aUsefulFunctions_8hpp_html_a1494d7abe818b2a71af63610332d55d1"><div class="ttname"><a href="UsefulFunctions_8hpp.html#a1494d7abe818b2a71af63610332d55d1">functionSelector</a></div><div class="ttdeci">void functionSelector(int functionNumber, Args &amp;&amp;...args)</div><div class="ttdef"><b>Definition</b> UsefulFunctions.hpp:6</div></div>
+<div class="ttc" id="aUsefulFunctions_8hpp_html_a1494d7abe818b2a71af63610332d55d1"><div class="ttname"><a href="UsefulFunctions_8hpp.html#a1494d7abe818b2a71af63610332d55d1">functionSelector</a></div><div class="ttdeci">void functionSelector(int functionNumber, Args &amp;&amp;...args)</div><div class="ttdoc">Calls a function from a function table based on the given function number.</div><div class="ttdef"><b>Definition</b> UsefulFunctions.hpp:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

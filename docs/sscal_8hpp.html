@@ -75,8 +75,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
@@ -84,8 +84,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;sycl/sycl.hpp&gt;</code><br />
-<code>#include &lt;complex&gt;</code><br />
 <code>#include &quot;<a class="el" href="Setup_8hpp_source.html">../../Setup/Setup.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="SCAL_8hpp_source.html">SCAL.hpp</a>&quot;</code><br />
+<code>#include &lt;complex&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for sscal.hpp:</div>
 <div class="dyncontent">
@@ -99,82 +100,42 @@ This graph shows which files directly or indirectly include this file:</div>
 </div>
 <p><a href="sscal_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsscalFunction_1_1SAXPY.html">sscalFunction::SAXPY</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:namespacesscalFunction" id="r_namespacesscalFunction"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesscalFunction.html">sscalFunction</a></td></tr>
+<tr class="memitem:namespaceSscalFunc" id="r_namespaceSscalFunc"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSscalFunc.html">SscalFunc</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ad928f8aac292cb1ba422581c26f77957" id="r_ad928f8aac292cb1ba422581c26f77957"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sscal_8hpp.html#ad928f8aac292cb1ba422581c26f77957">PARAMETER_LIST</a>&#160;&#160;&#160;uint64_t, float, float*, int, sycl::queue</td></tr>
+<tr class="separator:ad928f8aac292cb1ba422581c26f77957"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ab59a241a50a8738aedf38cb11a03aa96" id="r_ab59a241a50a8738aedf38cb11a03aa96"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesscalFunction.html#ab59a241a50a8738aedf38cb11a03aa96">sscalFunction::SaxpyFunctionPointer</a>) (uint64_t, float, float *, int, sycl::queue)</td></tr>
-<tr class="separator:ab59a241a50a8738aedf38cb11a03aa96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1cf60b6bcc6a1ef1f92d5e7d3158f61" id="r_ac1cf60b6bcc6a1ef1f92d5e7d3158f61"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSscalFunc.html#ac1cf60b6bcc6a1ef1f92d5e7d3158f61">SscalFunc::SscalFunctionPointer</a>) (<a class="el" href="caxpy_8hpp.html#ad928f8aac292cb1ba422581c26f77957">PARAMETER_LIST</a>)</td></tr>
+<tr class="separator:ac1cf60b6bcc6a1ef1f92d5e7d3158f61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a54d9899b78c4febc553f06973917e3b0" id="r_a54d9899b78c4febc553f06973917e3b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sscal_8hpp.html#a54d9899b78c4febc553f06973917e3b0">sscal</a> (uint64_t N, float alpha, float *x, int incX, sycl::queue q=sycl::queue(), bool Async=false)</td></tr>
-<tr class="separator:a54d9899b78c4febc553f06973917e3b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f61d79f56390d426e4ff473e4cd7447" id="r_a9f61d79f56390d426e4ff473e4cd7447"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesscalFunction.html#a9f61d79f56390d426e4ff473e4cd7447">sscalFunction::defaultSscalFunction</a> (uint64_t N, float alpha, float *x, int incX, sycl::queue q)</td></tr>
-<tr class="separator:a9f61d79f56390d426e4ff473e4cd7447"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7751d67ea386465cb1847dcc05e7bc94" id="r_a7751d67ea386465cb1847dcc05e7bc94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSscalFunc.html#a7751d67ea386465cb1847dcc05e7bc94">SscalFunc::defaultSscalFunction</a> (<a class="el" href="caxpy_8hpp.html#ad928f8aac292cb1ba422581c26f77957">PARAMETER_LIST</a>)</td></tr>
+<tr class="separator:a7751d67ea386465cb1847dcc05e7bc94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a09406cfcd8a110edb9035fbaee908273" id="r_a09406cfcd8a110edb9035fbaee908273"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacesscalFunction.html#ab59a241a50a8738aedf38cb11a03aa96">SaxpyFunctionPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesscalFunction.html#a09406cfcd8a110edb9035fbaee908273">sscalFunction::funcTable</a> [1]</td></tr>
-<tr class="separator:a09406cfcd8a110edb9035fbaee908273"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f33385cc230056fc7b51e7810239711" id="r_a8f33385cc230056fc7b51e7810239711"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsscalFunction_1_1SAXPY.html">SAXPY</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesscalFunction.html#a8f33385cc230056fc7b51e7810239711">sscalFunction::saxpyClass</a></td></tr>
-<tr class="separator:a8f33385cc230056fc7b51e7810239711"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99bbbcd7259c51d1cd8216d79789f684" id="r_a99bbbcd7259c51d1cd8216d79789f684"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceSscalFunc.html#ac1cf60b6bcc6a1ef1f92d5e7d3158f61">SscalFunctionPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSscalFunc.html#a99bbbcd7259c51d1cd8216d79789f684">SscalFunc::funcTable</a> []</td></tr>
+<tr class="separator:a99bbbcd7259c51d1cd8216d79789f684"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b20a7b4340adaebadcf101fa12a5fac" id="r_a2b20a7b4340adaebadcf101fa12a5fac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSscalFunc.html#a2b20a7b4340adaebadcf101fa12a5fac">SscalFunc::defaultFunction</a> = functionOptimDataBase::functionMap[&quot;sscal&quot;]</td></tr>
+<tr class="separator:a2b20a7b4340adaebadcf101fa12a5fac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a54d9899b78c4febc553f06973917e3b0" name="a54d9899b78c4febc553f06973917e3b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54d9899b78c4febc553f06973917e3b0">&#9670;&#160;</a></span>sscal()</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ad928f8aac292cb1ba422581c26f77957" name="ad928f8aac292cb1ba422581c26f77957"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad928f8aac292cb1ba422581c26f77957">&#9670;&#160;</a></span>PARAMETER_LIST</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void sscal </td>
-          <td>(</td>
-          <td class="paramtype">uint64_t&#160;</td>
-          <td class="paramname"><em>N</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>alpha</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float *&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>incX</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">sycl::queue&#160;</td>
-          <td class="paramname"><em>q</em> = <code>sycl::queue()</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>Async</em> = <code>false</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname">#define PARAMETER_LIST&#160;&#160;&#160;uint64_t, float, float*, int, sycl::queue</td>
         </tr>
       </table>
 </div><div class="memdoc">

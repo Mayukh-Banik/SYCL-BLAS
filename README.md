@@ -39,6 +39,7 @@
 ## Key Features
 
 NetLib Conformant BLAS implementation with Tuning/Function selection determined at run/compile time for parallelized computation.
+[Documentation Link](https://mayukh-banik.github.io/SYCL-BLAS/)
 
 ## Installation
 
