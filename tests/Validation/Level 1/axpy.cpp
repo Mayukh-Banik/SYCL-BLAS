@@ -51,4 +51,3 @@ TEST_F(AXPY, axpy_raw)
 
 #undef LENGTH
 #undef DATA_TYPE
-

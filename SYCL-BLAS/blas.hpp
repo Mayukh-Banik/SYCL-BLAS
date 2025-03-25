@@ -5,7 +5,7 @@
 #include <cmath>
 #include <complex>
 
-/** 
+/**
  * @mainpage SYCL-BLAS Documentation
  *
  * @section intro_sec Introduction
@@ -22,7 +22,6 @@
  *
  * @ref sblas
  */
-
 
 /**
  * @namespace sblas
@@ -186,4 +185,8 @@ namespace sblas
      */
     void zdscal(uint64_t N, std::complex<double> alpha, std::complex<double> *x, int incX, sycl::queue q = sycl::queue(), bool Async = false, int index = -1);
 
+    void ccopy(uint64_t N, std::complex<float> *x, int incX, std::complex<float> *y, int incY, sycl::queue q = sycl::queue(), bool Async = false, int index = -1);
+    void dcopy(uint64_t N, double *x, int incX, double *y, int incY, sycl::queue q = sycl::queue(), bool Async = false, int index = -1);
+    void scopy(uint64_t N, float *x, int incX, float *y, int incY, sycl::queue q = sycl::queue(), bool Async = false, int index = -1);
+    void zcopy(uint64_t N, std::complex<double> *x, int incX, std::complex<double> *y, int incY, sycl::queue q = sycl::queue(), bool Async = false, int index = -1);
 }

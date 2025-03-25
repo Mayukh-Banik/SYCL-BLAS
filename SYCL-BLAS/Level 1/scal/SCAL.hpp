@@ -2,7 +2,6 @@
 
 #include <sycl/sycl.hpp>
 #include <cstdint>
-#include <utility>
 #include "../../Setup/UsefulFunctions.hpp"
 #include <complex>
 

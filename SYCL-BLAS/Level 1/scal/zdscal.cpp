@@ -5,7 +5,7 @@ namespace sblas
 {
     void zdscal(uint64_t N, double alpha , std::complex<double>* x, int incX, sycl::queue q, bool Async, int index)
     {
-        functionSelector<zdscalFunc::funcTable>(index == -1 ? zdscalFunc::defaultFunction : index, N, alpha, x, incX, q);
+        functionSelector<zdscalFunc::funcTable>(functionIndex<NUMBER_OF_FUNCTIONS>(index), N, alpha, x, incX, q);
         if (!Async)
         {
             q.wait();

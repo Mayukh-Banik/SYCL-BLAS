@@ -4,6 +4,7 @@
 #include "../../Setup/Setup.hpp"
 #include "SCAL.hpp"
 #include <complex>
+#define NUMBER_OF_FUNCTIONS 1
 
 namespace cscalFunc
 {

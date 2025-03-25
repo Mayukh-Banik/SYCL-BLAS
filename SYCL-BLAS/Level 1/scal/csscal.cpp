@@ -5,7 +5,7 @@ namespace sblas
 {
     void csscal(uint64_t N, float alpha, std::complex<float>* x, int incX, sycl::queue q, bool Async, int index)
     {
-        functionSelector<csscalFunc::funcTable>(index == -1 ? csscalFunc::defaultFunction : index, N, alpha, x, incX, q);
+        functionSelector<csscalFunc::funcTable>(functionIndex<NUMBER_OF_FUNCTIONS>(index), N, alpha, x, incX, q);
         if (!Async)
         {
             q.wait();

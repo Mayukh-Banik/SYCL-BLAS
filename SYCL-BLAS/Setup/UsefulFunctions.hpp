@@ -18,3 +18,9 @@ void functionSelector(int functionNumber, Args &&...args)
 {
     FuncTable[functionNumber](std::forward<Args>(args)...);
 }
+
+template <int N>
+int functionIndex(int index)
+{
+    return (index >= 0 && index < N) ? index : 0;
+}

@@ -3,6 +3,7 @@
 #include <sycl/sycl.hpp>
 #include "../../Setup/Setup.hpp"
 #include "AXPY.hpp"
+#define NUMBER_OF_FUNCTIONS 1
 
 namespace saxpyFunc
 {
