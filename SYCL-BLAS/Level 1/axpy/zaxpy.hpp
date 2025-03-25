@@ -7,7 +7,7 @@
 
 namespace zaxpyFunc
 {
-#define PARAMETER_LIST uint64_t, double, std::complex<double> *, int, std::complex<double> *, int, sycl::queue
+#define PARAMETER_LIST uint64_t, std::complex<double>, std::complex<double> *, int, std::complex<double> *, int, sycl::queue
     void defaultZaxpyFunction(PARAMETER_LIST);
 
     typedef void (*ZaxpyFunctionPointer)(PARAMETER_LIST);

@@ -10,7 +10,7 @@
  */
 namespace caxpyFunc
 {
-    #define PARAMETER_LIST uint64_t, float, std::complex<float> *, int, std::complex<float> *, int, sycl::queue
+#define PARAMETER_LIST uint64_t, std::complex<float>, std::complex<float> *, int, std::complex<float> *, int, sycl::queue
     void defaultCaxpyFunction(PARAMETER_LIST);
 
     typedef void (*CaxpyFunctionPointer)(PARAMETER_LIST);
@@ -21,5 +21,5 @@ namespace caxpyFunc
     };
     int defaultFunction = functionOptimDataBase::functionMap["caxpy"];
 
-    #undef PARAMETER_LIST
+#undef PARAMETER_LIST
 }

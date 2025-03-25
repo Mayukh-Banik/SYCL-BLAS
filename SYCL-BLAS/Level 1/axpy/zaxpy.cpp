@@ -3,7 +3,7 @@
 
 namespace sblas
 {
-    void zaxpy(uint64_t N, double alpha, std::complex<double> *x, int incX, std::complex<double> *y, int incY, sycl::queue q, bool Async, int index)
+    void zaxpy(uint64_t N, std::complex<double> alpha, std::complex<double> *x, int incX, std::complex<double> *y, int incY, sycl::queue q, bool Async, int index)
     {
         functionSelector<zaxpyFunc::funcTable>(index == -1 ? zaxpyFunc::defaultFunction : index, N, alpha, x, incX, y, incY, q);
         if (!Async)
@@ -15,7 +15,7 @@ namespace sblas
 
 namespace zaxpyFunc
 {
-    void defaultZaxpyFunction(uint64_t N, double alpha, std::complex<double> *x, int incX, std::complex<double> *y, int incY, sycl::queue q)
+    void defaultZaxpyFunction(uint64_t N, std::complex<double> alpha, std::complex<double> *x, int incX, std::complex<double> *y, int incY, sycl::queue q)
     {
         simpleAxpy(N, alpha, x, incX, y, incY, q);
     }

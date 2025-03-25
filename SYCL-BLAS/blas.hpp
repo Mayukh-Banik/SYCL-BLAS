@@ -6,29 +6,21 @@
 #include <complex>
 
 /** 
- * @mainpage MyProject Documentation
+ * @mainpage SYCL-BLAS Documentation
  *
  * @section intro_sec Introduction
  *
- * This is an example project demonstrating how to add documentation to the main page.
+ * An open source implementation of BLAS in SYCL with Tuners for multiple platforms.
  *
  * @section install_sec Installation
  *
- * 1. Clone the repository
- * 2. Run `make`
- * 3. Execute `./myproject`
+ * 1. SYCL Compiler
+ * 2. CMake
+ * 3. SYCL capable device (everything except AMD CPUS and new AMD GPUs).
  *
  * @section usage_sec Usage
  *
- * Here's how you use this program:
- * @code
- * MyClass obj;
- * obj.doSomething();
- * @endcode
- *
- * @author Your Name
- * @version 1.0
- * @date March 2025
+ * @ref sblas
  */
 
 
