@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <br>
-  <a href="http://www.amitmerchant.com/electron-markdownify"><img src="https://www.hpc.cineca.it/wp-content/uploads/2023/10/SYCL.png" alt="Markdownify" width="200"></a>
+<!--   <a href="http://www.amitmerchant.com/electron-markdownify"><img src="https://www.hpc.cineca.it/wp-content/uploads/2023/10/SYCL.png" alt="Markdownify" width="200"></a> -->
   <br>
   SYCL-BLAS
   <br>
