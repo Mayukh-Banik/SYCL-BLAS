@@ -1,53 +1,102 @@
 #include <SYCL-BLAS/blas.hpp>
 #include <gtest/gtest.h>
 #include <random>
+#include <ctime>
+#include <iostream>
 
-#define DATA_TYPE float
-#define LENGTH 100
+#define MAX_ELEMENTS 99999999
+#define MAX_SCALAR 10
 
-class AXPY : public ::testing::Test
+const sycl::queue q = sycl::queue();
+
+template <typename T>
+class AxpyFunctionTester
 {
-protected:
-    sycl::queue q;
-    DATA_TYPE *x;
-    DATA_TYPE *y;
-    DATA_TYPE *y_expected;
+public:
+	T *x;
+	T *y;
+	T *expectedY;
+	uint64_t N;
+	T factor;
 
-    void SetUp() override
-    {
-        std::srand(std::time(nullptr));
-        q = sycl::queue();
-        x = sycl::malloc_shared<DATA_TYPE>(sizeof(DATA_TYPE) * LENGTH, q);
-        y = sycl::malloc_shared<DATA_TYPE>(sizeof(DATA_TYPE) * LENGTH, q);
-        y_expected = sycl::malloc_shared<DATA_TYPE>(sizeof(DATA_TYPE) * LENGTH, q);
+	AxpyFunctionTester()
+	{
+		std::srand(std::time(nullptr));
+		this->N = MAX_ELEMENTS;
+		this->factor = static_cast<T>(MAX_SCALAR);
 
-        for (int i = 0; i < LENGTH; i++)
-        {
-            x[i] = (DATA_TYPE) (std::rand() % 100);
-            y[i] = (DATA_TYPE) (std::rand() % 100);
-            y_expected[i] = y[i];
-        }
-    }
+		this->x = static_cast<T *>(sycl::malloc_shared(N * sizeof(T), q));
+		this->y = static_cast<T *>(sycl::malloc_shared(N * sizeof(T), q));
+		this->expectedY = new T[N];
 
-    void TearDown() override
-    {
-        sycl::free(x, q);
-        sycl::free(y, q);
-        sycl::free(y_expected, q);
-    }
+		for (size_t i = 0; i < N; ++i)
+		{
+			this->x[i] = static_cast<T>(std::rand() % 100);
+			this->y[i] = static_cast<T>(std::rand() % 100);
+			this->expectedY[i] = this->y[i] + this->x[i] * this->factor;
+		}
+	}
+
+	~AxpyFunctionTester()
+	{
+		sycl::free(x, q);
+		sycl::free(y, q);
+		delete[] expectedY;
+	}
 };
 
-TEST_F(AXPY, axpy_raw)
+TEST(Daxpy, Daxpy)
 {
-    int alpha = 1;
-    sblas::saxpy(LENGTH, alpha, x, 1, y, 1, q);
-    for (int i = 0; i < LENGTH; i++)
-    {
-        ASSERT_EQ(y_expected[i] + alpha * x[i], y[i])
-        << "x[i]" << x[i] << "y[i]" << y[i] << std::endl;
-    }
+	AxpyFunctionTester<double> temp;
+	sblas::daxpy(temp.N, temp.factor, temp.x, 1, temp.y, 1, q);
+
+	for (size_t i = 0; i < temp.N; ++i)
+	{
+		ASSERT_EQ(temp.y[i], temp.expectedY[i]) << "Mismatch at index " << i << " | x[i]: " << temp.x[i]
+																		  << " | y[i]: " << temp.y[i]
+																		  << " | expectedY[i]: " << temp.expectedY[i]
+																		  << " | factor: " << temp.factor;
+	}
 }
 
+TEST(Saxpy, Saxpy)
+{
+	AxpyFunctionTester<float> temp;
+	sblas::saxpy(temp.N, temp.factor, temp.x, 1, temp.y, 1, q);
 
-#undef LENGTH
-#undef DATA_TYPE
+	for (size_t i = 0; i < temp.N; ++i)
+	{
+		ASSERT_EQ(temp.y[i], temp.expectedY[i]) << "Mismatch at index " << i << " | x[i]: " << temp.x[i]
+																		  << " | y[i]: " << temp.y[i]
+																		  << " | expectedY[i]: " << temp.expectedY[i]
+																		  << " | factor: " << temp.factor;
+	}
+}
+
+TEST(Caxpy, Caxpy)
+{
+	AxpyFunctionTester<std::complex<float>> temp;
+	sblas::caxpy(temp.N, temp.factor, temp.x, 1, temp.y, 1, q);
+
+	for (size_t i = 0; i < temp.N; ++i)
+	{
+		ASSERT_EQ(temp.y[i], temp.expectedY[i]) << "Mismatch at index " << i << " | x[i]: " << temp.x[i]
+																		  << " | y[i]: " << temp.y[i]
+																		  << " | expectedY[i]: " << temp.expectedY[i]
+																		  << " | factor: " << temp.factor;
+	}
+}
+
+TEST(Zaxpy, Zaxpy)
+{
+	AxpyFunctionTester<std::complex<double>> temp;
+	sblas::zaxpy(temp.N, temp.factor, temp.x, 1, temp.y, 1, q);
+
+	for (size_t i = 0; i < temp.N; ++i)
+	{
+		ASSERT_EQ(temp.y[i], temp.expectedY[i]) << "Mismatch at index " << i << " | x[i]: " << temp.x[i]
+																		  << " | y[i]: " << temp.y[i]
+																		  << " | expectedY[i]: " << temp.expectedY[i]
+																		  << " | factor: " << temp.factor;
+	}
+}

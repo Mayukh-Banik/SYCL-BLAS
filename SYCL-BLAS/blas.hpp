@@ -86,7 +86,7 @@ namespace sblas
      * @param Async If true, the computation is performed asynchronously.
      * @param index Index for testing/tuning purposes (default is -1).
      */
-    void caxpy(uint64_t N, float alpha, std::complex<float> *x, int incX, std::complex<float> *y, int incY, sycl::queue q = sycl::queue(), bool Async = false, int index = -1);
+    void caxpy(uint64_t N, std::complex<float> alpha, std::complex<float> *x, int incX, std::complex<float> *y, int incY, sycl::queue q = sycl::queue(), bool Async = false, int index = -1);
 
     /**
      * @brief Performs the ZAXPY operation: y = alpha * x + y
@@ -104,7 +104,7 @@ namespace sblas
      * @param Async If true, the computation is performed asynchronously.
      * @param index Index for testing/tuning purposes (default is -1).
      */
-    void zaxpy(uint64_t N, double alpha, std::complex<double> *x, int incX, std::complex<double> *y, int incY, sycl::queue q = sycl::queue(), bool Async = false, int index = -1);
+    void zaxpy(uint64_t N, std::complex<double> alpha, std::complex<double> *x, int incX, std::complex<double> *y, int incY, sycl::queue q = sycl::queue(), bool Async = false, int index = -1);
 
     /**
      * @brief Scales a complex single-precision vector by a complex scalar using SYCL.

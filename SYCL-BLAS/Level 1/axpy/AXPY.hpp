@@ -55,7 +55,7 @@ void simpleAxpy(uint64_t N, A alpha, std::complex<B> *x, int incX, std::complex<
                                     {
             const int64_t Xindex = i[0] * incX;
             const int64_t Yindex = i[0] * incY;
-            y[Yindex] = static_cast<std::complex<C>>(static_cast<std::complex<B>>(alpha) * x[Xindex]); }); });
+            y[Yindex] += static_cast<std::complex<C>>(static_cast<std::complex<B>>(alpha) * x[Xindex]); }); });
 }
 
 /**
@@ -80,5 +80,5 @@ void simpleAxpy(uint64_t N, std::complex<A> alpha, std::complex<B> *x, int incX,
                                     {
             const int64_t Xindex = i[0] * incX;
             const int64_t Yindex = i[0] * incY;
-            y[Yindex] = static_cast<std::complex<C>>(static_cast<std::complex<B>>(alpha) * x[Xindex]); }); });
+            y[Yindex] += static_cast<std::complex<C>>(static_cast<std::complex<B>>(alpha) * x[Xindex]); }); });
 }
