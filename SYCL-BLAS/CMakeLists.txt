@@ -19,13 +19,10 @@ target_include_directories(SYCL-BLAS
 
 if(MSVC)
     target_compile_options(SYCL-BLAS PRIVATE
-        /O2
+        /O3
         /GL
     )
 else()
-set(CMAKE_CXX_FLAGS -O3)
-    # target_compile_options(SYCL-BLAS PRIVATE
-    #     -O3
-    # )
+    set(CMAKE_CXX_FLAGS -O3)
 endif()
 add_library(SYCL-BLAS::SYCL-BLAS ALIAS SYCL-BLAS)

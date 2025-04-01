@@ -83,6 +83,7 @@ $(function() {
 <div class="textblock"><code>#include &lt;sycl/sycl.hpp&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;complex&gt;</code><br />
+<code>#include &quot;<a class="el" href="database__structures_8hpp_source.html">Database/database_structures.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for blas.hpp:</div>
 <div class="dyncontent">
@@ -98,49 +99,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:namespacesblas" id="r_namespacesblas"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesblas.html">sblas</a></td></tr>
+<tr class="memitem:namespacesyBlast" id="r_namespacesyBlast"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesyBlast.html">syBlast</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a225a18d4f287ecd58a13702f4bbf5d5a" id="r_a225a18d4f287ecd58a13702f4bbf5d5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesblas.html#a225a18d4f287ecd58a13702f4bbf5d5a">sblas::saxpy</a> (uint64_t N, float alpha, float *x, int incX, float *y, int incY, sycl::queue q=sycl::queue(), bool Async=false, int index=-1)</td></tr>
-<tr class="memdesc:a225a18d4f287ecd58a13702f4bbf5d5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the SAXPY operation: y = alpha * x + y.  <br /></td></tr>
-<tr class="separator:a225a18d4f287ecd58a13702f4bbf5d5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65b2428d1f7b2cabdec01d462901334b" id="r_a65b2428d1f7b2cabdec01d462901334b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesblas.html#a65b2428d1f7b2cabdec01d462901334b">sblas::daxpy</a> (uint64_t N, double alpha, double *x, int incX, double *y, int incY, sycl::queue q=sycl::queue(), bool Async=false, int index=-1)</td></tr>
-<tr class="memdesc:a65b2428d1f7b2cabdec01d462901334b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the DAXPY operation: y = alpha * x + y.  <br /></td></tr>
-<tr class="separator:a65b2428d1f7b2cabdec01d462901334b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ec6d7953a3317f72410da8b93080d86" id="r_a8ec6d7953a3317f72410da8b93080d86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesblas.html#a8ec6d7953a3317f72410da8b93080d86">sblas::caxpy</a> (uint64_t N, float alpha, std::complex&lt; float &gt; *x, int incX, std::complex&lt; float &gt; *y, int incY, sycl::queue q=sycl::queue(), bool Async=false, int index=-1)</td></tr>
-<tr class="memdesc:a8ec6d7953a3317f72410da8b93080d86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the CAXPY operation: y = alpha * x + y.  <br /></td></tr>
-<tr class="separator:a8ec6d7953a3317f72410da8b93080d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afaab72ad7b518b34f290d71d9bdb2c9c" id="r_afaab72ad7b518b34f290d71d9bdb2c9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesblas.html#afaab72ad7b518b34f290d71d9bdb2c9c">sblas::zaxpy</a> (uint64_t N, double alpha, std::complex&lt; double &gt; *x, int incX, std::complex&lt; double &gt; *y, int incY, sycl::queue q=sycl::queue(), bool Async=false, int index=-1)</td></tr>
-<tr class="memdesc:afaab72ad7b518b34f290d71d9bdb2c9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the ZAXPY operation: y = alpha * x + y.  <br /></td></tr>
-<tr class="separator:afaab72ad7b518b34f290d71d9bdb2c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9420491c8768e146c7acd5bbf7282d06" id="r_a9420491c8768e146c7acd5bbf7282d06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesblas.html#a9420491c8768e146c7acd5bbf7282d06">sblas::cscal</a> (uint64_t N, std::complex&lt; float &gt; alpha, std::complex&lt; float &gt; *x, int incX, sycl::queue q=sycl::queue(), bool Async=false, int index=-1)</td></tr>
-<tr class="memdesc:a9420491c8768e146c7acd5bbf7282d06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scales a complex single-precision vector by a complex scalar using SYCL.  <br /></td></tr>
-<tr class="separator:a9420491c8768e146c7acd5bbf7282d06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b74250ddb9b9f3a85c746e780fdbeb6" id="r_a9b74250ddb9b9f3a85c746e780fdbeb6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesblas.html#a9b74250ddb9b9f3a85c746e780fdbeb6">sblas::csscal</a> (uint64_t N, float alpha, std::complex&lt; float &gt; *x, int incX, sycl::queue q=sycl::queue(), bool Async=false, int index=-1)</td></tr>
-<tr class="memdesc:a9b74250ddb9b9f3a85c746e780fdbeb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scales a complex single-precision vector by a real scalar using SYCL.  <br /></td></tr>
-<tr class="separator:a9b74250ddb9b9f3a85c746e780fdbeb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a321bb606a9873433301dfe67dd5640eb" id="r_a321bb606a9873433301dfe67dd5640eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesblas.html#a321bb606a9873433301dfe67dd5640eb">sblas::dscal</a> (uint64_t N, double alpha, double *x, int incX, sycl::queue q=sycl::queue(), bool Async=false, int index=-1)</td></tr>
-<tr class="memdesc:a321bb606a9873433301dfe67dd5640eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scales a double-precision vector by a real scalar using SYCL.  <br /></td></tr>
-<tr class="separator:a321bb606a9873433301dfe67dd5640eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b92a98856317fa454439421cf19eef6" id="r_a1b92a98856317fa454439421cf19eef6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesblas.html#a1b92a98856317fa454439421cf19eef6">sblas::sscal</a> (uint64_t N, float alpha, float *x, int incX, sycl::queue q=sycl::queue(), bool Async=false, int index=-1)</td></tr>
-<tr class="memdesc:a1b92a98856317fa454439421cf19eef6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scales a single-precision vector by a real scalar using SYCL.  <br /></td></tr>
-<tr class="separator:a1b92a98856317fa454439421cf19eef6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abde6d0a8a111fc8c71430b33a4534ea7" id="r_abde6d0a8a111fc8c71430b33a4534ea7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesblas.html#abde6d0a8a111fc8c71430b33a4534ea7">sblas::zdscal</a> (uint64_t N, double alpha, std::complex&lt; double &gt; *x, int incX, sycl::queue q=sycl::queue(), bool Async=false, int index=-1)</td></tr>
-<tr class="memdesc:abde6d0a8a111fc8c71430b33a4534ea7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scales a complex double-precision vector by a real scalar using SYCL.  <br /></td></tr>
-<tr class="separator:abde6d0a8a111fc8c71430b33a4534ea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf664af468168f171c14ba5cbd41a046" id="r_adf664af468168f171c14ba5cbd41a046"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesblas.html#adf664af468168f171c14ba5cbd41a046">sblas::zdscal</a> (uint64_t N, std::complex&lt; double &gt; alpha, std::complex&lt; double &gt; *x, int incX, sycl::queue q=sycl::queue(), bool Async=false, int index=-1)</td></tr>
-<tr class="memdesc:adf664af468168f171c14ba5cbd41a046"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scales a complex double-precision vector by a complex scalar using SYCL.  <br /></td></tr>
-<tr class="separator:adf664af468168f171c14ba5cbd41a046"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6c0ff33932932fd14b134798ac37624" id="r_ad6c0ff33932932fd14b134798ac37624"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesblas.html#ad6c0ff33932932fd14b134798ac37624">sblas::ccopy</a> (uint64_t N, std::complex&lt; float &gt; *x, int incX, std::complex&lt; float &gt; *y, int incY, sycl::queue q=sycl::queue(), bool Async=false, int index=-1)</td></tr>
-<tr class="separator:ad6c0ff33932932fd14b134798ac37624"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa50789858941376c35a4af6e82809285" id="r_aa50789858941376c35a4af6e82809285"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesblas.html#aa50789858941376c35a4af6e82809285">sblas::dcopy</a> (uint64_t N, double *x, int incX, double *y, int incY, sycl::queue q=sycl::queue(), bool Async=false, int index=-1)</td></tr>
-<tr class="separator:aa50789858941376c35a4af6e82809285"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6732531822e8e78c3943ac50026de2b3" id="r_a6732531822e8e78c3943ac50026de2b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesblas.html#a6732531822e8e78c3943ac50026de2b3">sblas::scopy</a> (uint64_t N, float *x, int incX, float *y, int incY, sycl::queue q=sycl::queue(), bool Async=false, int index=-1)</td></tr>
-<tr class="separator:a6732531822e8e78c3943ac50026de2b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c063b465709041bf903072d9b4531ed" id="r_a3c063b465709041bf903072d9b4531ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesblas.html#a3c063b465709041bf903072d9b4531ed">sblas::zcopy</a> (uint64_t N, std::complex&lt; double &gt; *x, int incX, std::complex&lt; double &gt; *y, int incY, sycl::queue q=sycl::queue(), bool Async=false, int index=-1)</td></tr>
-<tr class="separator:a3c063b465709041bf903072d9b4531ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a337a9a7e639caa443ed4acf378f8a7be" id="r_a337a9a7e639caa443ed4acf378f8a7be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesyBlast.html#a337a9a7e639caa443ed4acf378f8a7be">syBlast::saxpy</a> (const uint64_t N, const float alpha, const float *x, const int incx, float *y, const int incy, sycl::queue q=sycl::queue(), <a class="el" href="namespacesyBlast_1_1database.html#aa1e43de62b121caa4e5ebc17550eb349">database::Parameters</a> p=<a class="el" href="namespacesyBlast_1_1database.html#aa1e43de62b121caa4e5ebc17550eb349">database::Parameters</a>())</td></tr>
+<tr class="separator:a337a9a7e639caa443ed4acf378f8a7be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

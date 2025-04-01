@@ -12,9 +12,8 @@
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/build",
       "cacheVariables": {
-        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
-        "CMAKE_CXX_COMPILER": "acpp",
-        "CMAKE_CXX_FLAGS": "-O3 -ffast-math"
+        "CMAKE_CXX_COMPILER": "icpx",
+        "CMAKE_CXX_FLAGS": "-O3 -ffast-math -fsycl"
       }
     },
     {
@@ -25,6 +24,14 @@
       "cacheVariables": {
         "ENABLE_TESTING": "ON"
       }
+    },
+    {
+      "name": "default",
+      "displayName": "Builds Shared Library",
+      "description": "Configure project to build shared library",
+      "inherits": "base",
+      "cacheVariables": {
+      }
     }
   ],
   "buildPresets": [
@@ -32,6 +39,12 @@
       "name": "tests",
       "displayName": "Build with Tests",
       "configurePreset": "tests"
+    }
+    ,
+    {
+      "name": "default",
+      "displayName": "Build Default",
+      "configurePreset": "default"
     }
   ]
 }

@@ -86,23 +86,34 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">template</span> &lt;<span class="keyword">auto</span> *FuncTable, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="UsefulFunctions_8hpp.html#a1494d7abe818b2a71af63610332d55d1">   17</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="UsefulFunctions_8hpp.html#a1494d7abe818b2a71af63610332d55d1">functionSelector</a>(<span class="keywordtype">int</span> functionNumber, Args &amp;&amp;...args)</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    FuncTable[functionNumber](std::forward&lt;Args&gt;(args)...);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacesyBlast.html">syBlast</a></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="namespacesyBlast_1_1usefulFunctions.html">    8</a></span>    <span class="keyword">namespace </span>usefulFunctions</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keyword">template</span> &lt;<span class="keyword">auto</span> *FuncTable, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="namespacesyBlast_1_1usefulFunctions.html#af3e5deab23fc2a9acdefa9ef84abe0dc">   22</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="namespacesyBlast_1_1usefulFunctions.html#af3e5deab23fc2a9acdefa9ef84abe0dc">functionSelector</a>(<span class="keywordtype">int</span> functionNumber, Args &amp;&amp;...args)</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            FuncTable[functionNumber](std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        }</div>
 </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">template</span> &lt;<span class="keywordtype">int</span> N&gt;</div>
-<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="UsefulFunctions_8hpp.html#af246b6599a61b87fa656908c4477d78d">   23</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="UsefulFunctions_8hpp.html#af246b6599a61b87fa656908c4477d78d">functionIndex</a>(<span class="keywordtype">int</span> index)</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">return</span> (index &gt;= 0 &amp;&amp; index &lt; N) ? index : 0;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keyword">template</span> &lt;<span class="keywordtype">int</span> N&gt;</div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="namespacesyBlast_1_1usefulFunctions.html#a198076b580fee350cb3b8f76b1f59874">   28</a></span>        <span class="keywordtype">int</span> <a class="code hl_function" href="namespacesyBlast_1_1usefulFunctions.html#a198076b580fee350cb3b8f76b1f59874">functionIndex</a>(<span class="keywordtype">int</span> index)</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            <span class="keywordflow">return</span> (index &gt;= 0 &amp;&amp; index &lt; N) ? index : 0;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        }</div>
 </div>
-<div class="ttc" id="aUsefulFunctions_8hpp_html_a1494d7abe818b2a71af63610332d55d1"><div class="ttname"><a href="UsefulFunctions_8hpp.html#a1494d7abe818b2a71af63610332d55d1">functionSelector</a></div><div class="ttdeci">void functionSelector(int functionNumber, Args &amp;&amp;...args)</div><div class="ttdoc">Calls a function from a function table based on the given function number.</div><div class="ttdef"><b>Definition</b> UsefulFunctions.hpp:17</div></div>
-<div class="ttc" id="aUsefulFunctions_8hpp_html_af246b6599a61b87fa656908c4477d78d"><div class="ttname"><a href="UsefulFunctions_8hpp.html#af246b6599a61b87fa656908c4477d78d">functionIndex</a></div><div class="ttdeci">int functionIndex(int index)</div><div class="ttdef"><b>Definition</b> UsefulFunctions.hpp:23</div></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    }</div>
+</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>}</div>
+<div class="ttc" id="anamespacesyBlast_1_1usefulFunctions_html_a198076b580fee350cb3b8f76b1f59874"><div class="ttname"><a href="namespacesyBlast_1_1usefulFunctions.html#a198076b580fee350cb3b8f76b1f59874">syBlast::usefulFunctions::functionIndex</a></div><div class="ttdeci">int functionIndex(int index)</div><div class="ttdef"><b>Definition</b> UsefulFunctions.hpp:28</div></div>
+<div class="ttc" id="anamespacesyBlast_1_1usefulFunctions_html_af3e5deab23fc2a9acdefa9ef84abe0dc"><div class="ttname"><a href="namespacesyBlast_1_1usefulFunctions.html#af3e5deab23fc2a9acdefa9ef84abe0dc">syBlast::usefulFunctions::functionSelector</a></div><div class="ttdeci">void functionSelector(int functionNumber, Args &amp;&amp;...args)</div><div class="ttdoc">Calls a function from a function table based on the given function number.</div><div class="ttdef"><b>Definition</b> UsefulFunctions.hpp:22</div></div>
+<div class="ttc" id="anamespacesyBlast_html"><div class="ttname"><a href="namespacesyBlast.html">syBlast</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

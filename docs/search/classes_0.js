@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['optimizedfunctionhashmap_0',['OptimizedFunctionHashMap',['../classfunctionOptimDataBase_1_1OptimizedFunctionHashMap.html',1,'functionOptimDataBase']]]
+  ['databaseentry_0',['DataBaseEntry',['../structsyBlast_1_1database_1_1DataBaseEntry.html',1,'syBlast::database']]],
+  ['databasetable_1',['DataBaseTable',['../structsyBlast_1_1database_1_1DataBaseTable.html',1,'syBlast::database']]]
 ];

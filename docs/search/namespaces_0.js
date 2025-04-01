@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['caxpyfunc_0',['caxpyFunc',['../namespacecaxpyFunc.html',1,'']]],
-  ['ccopyfunc_1',['ccopyFunc',['../namespaceccopyFunc.html',1,'']]],
-  ['cscalfunc_2',['cscalFunc',['../namespacecscalFunc.html',1,'']]],
-  ['csscalfunc_3',['csscalFunc',['../namespacecsscalFunc.html',1,'']]],
-  ['cswapfunc_4',['cswapFunc',['../namespacecswapFunc.html',1,'']]]
+  ['syblast_0',['syBlast',['../namespacesyBlast.html',1,'']]],
+  ['syblast_3a_3adatabase_1',['database',['../namespacesyBlast_1_1database.html',1,'syBlast']]],
+  ['syblast_3a_3anumericfunctions_2',['NumericFunctions',['../namespacesyBlast_1_1NumericFunctions.html',1,'syBlast']]],
+  ['syblast_3a_3aparameters_3',['parameters',['../namespacesyBlast_1_1parameters.html',1,'syBlast']]],
+  ['syblast_3a_3ausefulfunctions_4',['usefulFunctions',['../namespacesyBlast_1_1usefulFunctions.html',1,'syBlast']]]
 ];

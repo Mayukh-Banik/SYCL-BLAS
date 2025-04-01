@@ -1,3 +1,6 @@
-add_subdirectory("axpy")
-add_subdirectory("scal")
-add_subdirectory("copy")
+# target_sources(SYCL-BLAS
+#     PRIVATE
+#         ${CMAKE_CURRENT_SOURCE_DIR}/temp.cpp
+# )
+
+add_subdirectory(AXPY)
