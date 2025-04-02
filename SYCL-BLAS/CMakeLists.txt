@@ -9,7 +9,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_library(SYCL-BLAS SHARED)
 set_target_properties(SYCL-BLAS PROPERTIES POSITION_INDEPENDENT_CODE ON)
 
-add_subdirectory("Level 1")
+add_subdirectory("Level1")
+add_subdirectory("Database")
 
 target_include_directories(SYCL-BLAS
     PUBLIC

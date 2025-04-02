@@ -3,7 +3,7 @@
 #include <sycl/sycl.hpp>
 #include <cstdint>
 #include <complex>
-#include "Database/database_structures.hpp"
+#include "Database/database.hpp"
 
 /**
  * @mainpage SYCL-BLAS Documentation
