@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['entries_0',['entries',['../structsyBlast_1_1database_1_1DataBaseTable.html#a1c7ff4361811aad7c161e912573f11a6',1,'syBlast::database::DataBaseTable']]]
+  ['blas_5fnames_0',['BLAS_NAMES',['../namespacesyBlast.html#ad7994e16ff098d0f20659eb404d3487e',1,'syBlast']]]
 ];

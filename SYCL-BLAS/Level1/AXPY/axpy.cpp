@@ -1,4 +1,5 @@
 #include "AXPY.hpp"
+#include "../../blas_c.hpp"
 
 namespace syBlast
 {
@@ -21,4 +22,9 @@ namespace syBlast
             break;
         }
     }
+}
+
+EXPORT_SYMBOL void saxpy(int n, float a, const float *x, int incx, float *y, int incy)
+{
+    syBlast::saxpy(n, a, x, incx, y, incy);
 }

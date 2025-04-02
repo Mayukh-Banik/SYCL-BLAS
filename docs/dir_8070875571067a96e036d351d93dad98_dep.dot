@@ -7,6 +7,10 @@ digraph "SYCL-BLAS/Database"
   compound=true
   subgraph clusterdir_2e9f169625e7208e21be673b418e5949 {
     graph [ bgcolor="#edf0f7", pencolor="grey25", label="SYCL-BLAS", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_2e9f169625e7208e21be673b418e5949.html",tooltip=""]
-  dir_8070875571067a96e036d351d93dad98 [label="Database", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_8070875571067a96e036d351d93dad98.html",tooltip=""];
+  subgraph clusterdir_8070875571067a96e036d351d93dad98 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_8070875571067a96e036d351d93dad98.html",tooltip=""]
+    dir_8070875571067a96e036d351d93dad98 [shape=plaintext, label="Database"];
+  dir_3d03b99f55103a403167d4c76fc0f6e1 [label="kernels", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_3d03b99f55103a403167d4c76fc0f6e1.html",tooltip=""];
+  }
   }
 }

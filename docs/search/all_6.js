@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['installation_0',['Installation',['../index.html#install_sec',1,'']]],
-  ['introduction_1',['Introduction',['../index.html#intro_sec',1,'']]]
+  ['getparametersfordevice_0',['getParametersForDevice',['../structsyBlast_1_1database_1_1DataBaseTable.html#a92c11dd0eb0e46fae0bd5187ab55a458',1,'syBlast::database::DataBaseTable']]]
 ];

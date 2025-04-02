@@ -9,10 +9,15 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -47,6 +52,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('blas__c_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,11 +90,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_2e9f169625e7208e21be673b418e5949.html">SYCL-BLAS</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
@@ -87,24 +104,23 @@ Include dependency graph for blas_c.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="blas__c_8hpp__incl.png" border="0" usemap="#aSYCL-BLAS_2blas__c_8hpp" alt=""/></div>
 </div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="blas__c_8hpp__dep__incl.png" border="0" usemap="#aSYCL-BLAS_2blas__c_8hppdep" alt=""/></div>
+</div>
 </div>
 <p><a href="blas__c_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ab57c319c35ea0fbacf781f2ecb3a4339" id="r_ab57c319c35ea0fbacf781f2ecb3a4339"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="blas__c_8hpp.html#ab57c319c35ea0fbacf781f2ecb3a4339">EXPORT_SYMBOL</a>&#160;&#160;&#160;__attribute__((visibility(&quot;default&quot;)))</td></tr>
+<tr class="memitem:ab57c319c35ea0fbacf781f2ecb3a4339" id="r_ab57c319c35ea0fbacf781f2ecb3a4339"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="blas__c_8hpp.html#ab57c319c35ea0fbacf781f2ecb3a4339">EXPORT_SYMBOL</a></td></tr>
 <tr class="separator:ab57c319c35ea0fbacf781f2ecb3a4339"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac142dc5c872caff26cc1bb96dd5db710" id="r_ac142dc5c872caff26cc1bb96dd5db710"><td class="memItemLeft" align="right" valign="top"><a class="el" href="blas__c_8hpp.html#ab57c319c35ea0fbacf781f2ecb3a4339">EXPORT_SYMBOL</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="blas__c_8hpp.html#ac142dc5c872caff26cc1bb96dd5db710">saxpy</a> (int n, float a, const float *x, int incx, float *y, int incy)</td></tr>
+<tr class="memitem:ac142dc5c872caff26cc1bb96dd5db710" id="r_ac142dc5c872caff26cc1bb96dd5db710"><td class="memItemLeft" align="right" valign="top"><a class="el" href="blas_8hpp.html#ab57c319c35ea0fbacf781f2ecb3a4339">EXPORT_SYMBOL</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="blas__c_8hpp.html#ac142dc5c872caff26cc1bb96dd5db710">saxpy</a> (int n, float a, const float *x, int incx, float *y, int incy)</td></tr>
 <tr class="separator:ac142dc5c872caff26cc1bb96dd5db710"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af282f30f5a0a6d95c9257358bf69ecc4" id="r_af282f30f5a0a6d95c9257358bf69ecc4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="blas__c_8hpp.html#ab57c319c35ea0fbacf781f2ecb3a4339">EXPORT_SYMBOL</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="blas__c_8hpp.html#af282f30f5a0a6d95c9257358bf69ecc4">daxpy</a> (int n, double a, const double *x, int incx, double *y, int incy)</td></tr>
-<tr class="separator:af282f30f5a0a6d95c9257358bf69ecc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab777a042c5b0b73fc4845a053818884" id="r_aab777a042c5b0b73fc4845a053818884"><td class="memItemLeft" align="right" valign="top"><a class="el" href="blas__c_8hpp.html#ab57c319c35ea0fbacf781f2ecb3a4339">EXPORT_SYMBOL</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="blas__c_8hpp.html#aab777a042c5b0b73fc4845a053818884">caxpy</a> (int n, std::complex&lt; float &gt; a, const std::complex&lt; float &gt; *x, int incx, std::complex&lt; float &gt; *y, int incy)</td></tr>
-<tr class="separator:aab777a042c5b0b73fc4845a053818884"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5574e5e32fbade6e69fa7ad8f0e77cb4" id="r_a5574e5e32fbade6e69fa7ad8f0e77cb4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="blas__c_8hpp.html#ab57c319c35ea0fbacf781f2ecb3a4339">EXPORT_SYMBOL</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="blas__c_8hpp.html#a5574e5e32fbade6e69fa7ad8f0e77cb4">zaxpy</a> (int n, std::complex&lt; double &gt; a, const std::complex&lt; double &gt; *x, int incx, std::complex&lt; double &gt; *y, int incy)</td></tr>
-<tr class="separator:a5574e5e32fbade6e69fa7ad8f0e77cb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ab57c319c35ea0fbacf781f2ecb3a4339" name="ab57c319c35ea0fbacf781f2ecb3a4339"></a>
@@ -114,7 +130,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define EXPORT_SYMBOL&#160;&#160;&#160;__attribute__((visibility(&quot;default&quot;)))</td>
+          <td class="memname">#define EXPORT_SYMBOL</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -122,110 +138,6 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="aab777a042c5b0b73fc4845a053818884" name="aab777a042c5b0b73fc4845a053818884"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab777a042c5b0b73fc4845a053818884">&#9670;&#160;</a></span>caxpy()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="blas__c_8hpp.html#ab57c319c35ea0fbacf781f2ecb3a4339">EXPORT_SYMBOL</a> void caxpy </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::complex&lt; float &gt;&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::complex&lt; float &gt; *&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>incx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::complex&lt; float &gt; *&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>incy</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af282f30f5a0a6d95c9257358bf69ecc4" name="af282f30f5a0a6d95c9257358bf69ecc4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af282f30f5a0a6d95c9257358bf69ecc4">&#9670;&#160;</a></span>daxpy()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="blas__c_8hpp.html#ab57c319c35ea0fbacf781f2ecb3a4339">EXPORT_SYMBOL</a> void daxpy </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const double *&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>incx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double *&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>incy</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="ac142dc5c872caff26cc1bb96dd5db710" name="ac142dc5c872caff26cc1bb96dd5db710"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac142dc5c872caff26cc1bb96dd5db710">&#9670;&#160;</a></span>saxpy()</h2>
 
@@ -233,7 +145,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="blas__c_8hpp.html#ab57c319c35ea0fbacf781f2ecb3a4339">EXPORT_SYMBOL</a> void saxpy </td>
+          <td class="memname"><a class="el" href="blas_8hpp.html#ab57c319c35ea0fbacf781f2ecb3a4339">EXPORT_SYMBOL</a> void saxpy </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>n</em>, </td>
@@ -278,62 +190,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a5574e5e32fbade6e69fa7ad8f0e77cb4" name="a5574e5e32fbade6e69fa7ad8f0e77cb4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5574e5e32fbade6e69fa7ad8f0e77cb4">&#9670;&#160;</a></span>zaxpy()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="blas__c_8hpp.html#ab57c319c35ea0fbacf781f2ecb3a4339">EXPORT_SYMBOL</a> void zaxpy </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::complex&lt; double &gt;&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::complex&lt; double &gt; *&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>incx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::complex&lt; double &gt; *&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>incy</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_2e9f169625e7208e21be673b418e5949.html">SYCL-BLAS</a></li><li class="navelem"><a class="el" href="blas__c_8hpp.html">blas_c.hpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

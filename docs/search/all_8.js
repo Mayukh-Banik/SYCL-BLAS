@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['operator_28_29_0',['operator()',['../classSimpleAxpy.html#af95995c272cf114011b0feeb27439dc8',1,'SimpleAxpy']]],
-  ['operator_5b_5d_1',['operator[]',['../classsyBlast_1_1parameters_1_1FunctionParameters.html#a07106d1048ed03b33c607aef2e18db68',1,'syBlast::parameters::FunctionParameters::operator[](size_t index) noexcept'],['../classsyBlast_1_1parameters_1_1FunctionParameters.html#a6ef31577b2340b1b5b919b3c76bb2d0e',1,'syBlast::parameters::FunctionParameters::operator[](size_t index) const noexcept']]]
+  ['names_0',['names',['../structsyBlast_1_1database_1_1DataBaseEntry.html#a3d442f2855e742c6597e6471b9686d19',1,'syBlast::database::DataBaseEntry']]],
+  ['number_5fof_5fblas_5ffunctions_1',['NUMBER_OF_BLAS_FUNCTIONS',['../namespacesyBlast_1_1database.html#a0340d7161309b4223b97f0efcb30896e',1,'syBlast::database']]],
+  ['numericfunctions_2ehpp_2',['NumericFunctions.hpp',['../NumericFunctions_8hpp.html',1,'']]]
 ];

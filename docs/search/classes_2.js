@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['simpleaxpy_0',['SimpleAxpy',['../classSimpleAxpy.html',1,'']]]
+  ['optimalfunctionparameters_0',['OptimalFunctionParameters',['../classsyBlast_1_1database_1_1OptimalFunctionParameters.html',1,'syBlast::database']]]
 ];
