@@ -1,0 +1,27 @@
+\doxysection{blas.\+hpp}
+\hypertarget{blas_8hpp_source}{}\label{blas_8hpp_source}\index{SYCL-\/BLAS/blas.hpp@{SYCL-\/BLAS/blas.hpp}}
+\mbox{\hyperlink{blas_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <sycl/sycl.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <complex>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{database_8hpp}{Database/database.hpp}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#if\ defined(\_WIN32)\ ||\ defined(\_WIN64)}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ EXPORT\_SYMBOL\ \_\_declspec(dllexport)}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ EXPORT\_SYMBOL\ }}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesyBlast}{syBlast}}}
+\DoxyCodeLine{00041\ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacesyBlast_a8c9e3afb93ad883f75e04e11510d3990}{saxpy}}(\textcolor{keyword}{const}\ uint64\_t\ N,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ *x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ incx,\ \textcolor{keywordtype}{float}\ *y,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ incy,\ sycl::queue\ q\ =\ sycl::queue(),\ \mbox{\hyperlink{namespacesyBlast_1_1database_aa1e43de62b121caa4e5ebc17550eb349}{database::Parameters}}\ p\ =\ \mbox{\hyperlink{namespacesyBlast_1_1database_af554def05719a8b7f667b138d63667a8}{database::FuncParamDB}}[\mbox{\hyperlink{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4fa04f4c22b3397be3cc13c5bb438645e5d}{BLAS\_ENUM\_NAMES::SAXPY}}]);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \}}
+
+\end{DoxyCode}

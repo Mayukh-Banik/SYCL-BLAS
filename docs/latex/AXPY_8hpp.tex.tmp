@@ -1,0 +1,24 @@
+\doxysection{SYCL-\/\+BLAS/\+Level1/\+AXPY/\+AXPY.hpp File Reference}
+\hypertarget{AXPY_8hpp}{}\label{AXPY_8hpp}\index{SYCL-\/BLAS/Level1/AXPY/AXPY.hpp@{SYCL-\/BLAS/Level1/AXPY/AXPY.hpp}}
+{\ttfamily \#include $<$sycl/sycl.\+hpp$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include "{}../../\+Database/database\+\_\+structures.\+hpp"{}}\newline
+Include dependency graph for AXPY.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{AXPY_8hpp_a3e20d96bcf409b4f5a16fe36d6477c9c}{axpy}} (const uint64\+\_\+t N, const T alpha, const T \texorpdfstring{$\ast$}{*}x, const int incx, T \texorpdfstring{$\ast$}{*}y, const int incy, sycl\+::queue q, \mbox{\hyperlink{namespacesyBlast_1_1database_aa1e43de62b121caa4e5ebc17550eb349}{sy\+Blast\+::database\+::\+Parameters}} p)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{AXPY_8hpp_a3e20d96bcf409b4f5a16fe36d6477c9c}\label{AXPY_8hpp_a3e20d96bcf409b4f5a16fe36d6477c9c} 
+\index{AXPY.hpp@{AXPY.hpp}!axpy@{axpy}}
+\index{axpy@{axpy}!AXPY.hpp@{AXPY.hpp}}
+\doxysubsubsection{\texorpdfstring{axpy()}{axpy()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void axpy (\begin{DoxyParamCaption}\item[{const uint64\+\_\+t}]{N,  }\item[{const T}]{alpha,  }\item[{const T \texorpdfstring{$\ast$}{*}}]{x,  }\item[{const int}]{incx,  }\item[{T \texorpdfstring{$\ast$}{*}}]{y,  }\item[{const int}]{incy,  }\item[{sycl\+::queue}]{q,  }\item[{\mbox{\hyperlink{namespacesyBlast_1_1database_aa1e43de62b121caa4e5ebc17550eb349}{sy\+Blast\+::database\+::\+Parameters}}}]{p }\end{DoxyParamCaption})}
+

@@ -1,0 +1,23 @@
+\doxysection{core.\+hpp}
+\hypertarget{core_8hpp_source}{}\label{core_8hpp_source}\index{SYCL-\/BLAS/Level1/core.hpp@{SYCL-\/BLAS/Level1/core.hpp}}
+\mbox{\hyperlink{core_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSimpleAxpy}{SimpleAxpy}}}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSimpleAxpy_a176dd6afe8ccee38596a03ccbc5277b4}{SimpleAxpy}}(\textcolor{keywordtype}{float}\ a)\ :\ \mbox{\hyperlink{classSimpleAxpy_a4832e61ab9bd92295f7e966191ed521f}{a\_}}(a)\ \{\}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSimpleAxpy_af95995c272cf114011b0feeb27439dc8}{operator()}}(\textcolor{keywordtype}{float}*\ x,\ \textcolor{keywordtype}{float}*\ y,\ \textcolor{keywordtype}{size\_t}\ size)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ size;\ ++i)\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y[i]\ +=\ \mbox{\hyperlink{classSimpleAxpy_a4832e61ab9bd92295f7e966191ed521f}{a\_}}\ *\ x[i];}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classSimpleAxpy_a4832e61ab9bd92295f7e966191ed521f}{a\_}};}
+\DoxyCodeLine{00017\ \};}
+
+\end{DoxyCode}

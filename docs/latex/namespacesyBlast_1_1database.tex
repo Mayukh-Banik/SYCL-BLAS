@@ -1,0 +1,95 @@
+\doxysection{sy\+Blast\+::database Namespace Reference}
+\hypertarget{namespacesyBlast_1_1database}{}\label{namespacesyBlast_1_1database}\index{syBlast::database@{syBlast::database}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsyBlast_1_1database_1_1Database}{Database}}
+\item 
+struct \mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseEntry}{Data\+Base\+Entry}}
+\item 
+struct \mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseTable}{Data\+Base\+Table}}
+\item 
+class \mbox{\hyperlink{classsyBlast_1_1database_1_1OptimalFunctionParameters}{Optimal\+Function\+Parameters}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespacesyBlast_1_1database_a5f36f1cbdbd91a868b1fdb76509dadc2}{Device\+Name}} = std\+::string
+\item 
+using \mbox{\hyperlink{namespacesyBlast_1_1database_aa1e43de62b121caa4e5ebc17550eb349}{Parameters}} = \mbox{\hyperlink{classsyBlast_1_1parameters_1_1FunctionParameters}{parameters\+::\+Function\+Parameters}}
+\item 
+typedef struct \mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseEntry}{sy\+Blast\+::database\+::\+Data\+Base\+Entry}} \mbox{\hyperlink{namespacesyBlast_1_1database_abc58be992e474f1288cd21e07d9bc7fe}{Data\+Base\+Entry}}
+\item 
+typedef struct \mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseTable}{sy\+Blast\+::database\+::\+Data\+Base\+Table}} \mbox{\hyperlink{namespacesyBlast_1_1database_a30d705a0e658c564e9825472fb7519f7}{Data\+Base\+Table}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseTable}{Data\+Base\+Table}} \mbox{\hyperlink{namespacesyBlast_1_1database_a0dfff9e0cd1b671c51b55630e24be5ad}{saxpy\+Table}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const \mbox{\hyperlink{classsyBlast_1_1database_1_1Database}{Database}} \mbox{\hyperlink{namespacesyBlast_1_1database_a2e568e291471687aad1c28adb8ba6068}{DB}}
+\item 
+static const \mbox{\hyperlink{classsyBlast_1_1database_1_1OptimalFunctionParameters}{Optimal\+Function\+Parameters}} \mbox{\hyperlink{namespacesyBlast_1_1database_af554def05719a8b7f667b138d63667a8}{Func\+Param\+DB}} (\mbox{\hyperlink{namespacesyBlast_1_1database_a2e568e291471687aad1c28adb8ba6068}{DB}}, sycl\+::device\{\}.get\+\_\+info$<$ sycl\+::info\+::device\+::name $>$())
+\item 
+constexpr short \mbox{\hyperlink{namespacesyBlast_1_1database_a0340d7161309b4223b97f0efcb30896e}{NUMBER\+\_\+\+OF\+\_\+\+BLAS\+\_\+\+FUNCTIONS}} = sizeof(\mbox{\hyperlink{namespacesyBlast_ad7994e16ff098d0f20659eb404d3487e}{BLAS\+\_\+\+NAMES}}) / sizeof(\mbox{\hyperlink{namespacesyBlast_ad7994e16ff098d0f20659eb404d3487e}{BLAS\+\_\+\+NAMES}}\mbox{[}0\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{namespacesyBlast_1_1database_abc58be992e474f1288cd21e07d9bc7fe}\label{namespacesyBlast_1_1database_abc58be992e474f1288cd21e07d9bc7fe} 
+\index{syBlast::database@{syBlast::database}!DataBaseEntry@{DataBaseEntry}}
+\index{DataBaseEntry@{DataBaseEntry}!syBlast::database@{syBlast::database}}
+\doxysubsubsection{\texorpdfstring{DataBaseEntry}{DataBaseEntry}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseEntry}{sy\+Blast\+::database\+::\+Data\+Base\+Entry}} \mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseEntry}{sy\+Blast\+::database\+::\+Data\+Base\+Entry}}}
+
+\Hypertarget{namespacesyBlast_1_1database_a30d705a0e658c564e9825472fb7519f7}\label{namespacesyBlast_1_1database_a30d705a0e658c564e9825472fb7519f7} 
+\index{syBlast::database@{syBlast::database}!DataBaseTable@{DataBaseTable}}
+\index{DataBaseTable@{DataBaseTable}!syBlast::database@{syBlast::database}}
+\doxysubsubsection{\texorpdfstring{DataBaseTable}{DataBaseTable}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseTable}{sy\+Blast\+::database\+::\+Data\+Base\+Table}} \mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseTable}{sy\+Blast\+::database\+::\+Data\+Base\+Table}}}
+
+\Hypertarget{namespacesyBlast_1_1database_a5f36f1cbdbd91a868b1fdb76509dadc2}\label{namespacesyBlast_1_1database_a5f36f1cbdbd91a868b1fdb76509dadc2} 
+\index{syBlast::database@{syBlast::database}!DeviceName@{DeviceName}}
+\index{DeviceName@{DeviceName}!syBlast::database@{syBlast::database}}
+\doxysubsubsection{\texorpdfstring{DeviceName}{DeviceName}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespacesyBlast_1_1database_a5f36f1cbdbd91a868b1fdb76509dadc2}{sy\+Blast\+::database\+::\+Device\+Name}} = typedef std\+::string}
+
+\Hypertarget{namespacesyBlast_1_1database_aa1e43de62b121caa4e5ebc17550eb349}\label{namespacesyBlast_1_1database_aa1e43de62b121caa4e5ebc17550eb349} 
+\index{syBlast::database@{syBlast::database}!Parameters@{Parameters}}
+\index{Parameters@{Parameters}!syBlast::database@{syBlast::database}}
+\doxysubsubsection{\texorpdfstring{Parameters}{Parameters}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespacesyBlast_1_1database_aa1e43de62b121caa4e5ebc17550eb349}{sy\+Blast\+::database\+::\+Parameters}} = typedef \mbox{\hyperlink{classsyBlast_1_1parameters_1_1FunctionParameters}{parameters\+::\+Function\+Parameters}}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacesyBlast_1_1database_a0dfff9e0cd1b671c51b55630e24be5ad}\label{namespacesyBlast_1_1database_a0dfff9e0cd1b671c51b55630e24be5ad} 
+\index{syBlast::database@{syBlast::database}!saxpyTable@{saxpyTable}}
+\index{saxpyTable@{saxpyTable}!syBlast::database@{syBlast::database}}
+\doxysubsubsection{\texorpdfstring{saxpyTable()}{saxpyTable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseTable}{Data\+Base\+Table}} sy\+Blast\+::database\+::saxpy\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacesyBlast_1_1database_a2e568e291471687aad1c28adb8ba6068}\label{namespacesyBlast_1_1database_a2e568e291471687aad1c28adb8ba6068} 
+\index{syBlast::database@{syBlast::database}!DB@{DB}}
+\index{DB@{DB}!syBlast::database@{syBlast::database}}
+\doxysubsubsection{\texorpdfstring{DB}{DB}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classsyBlast_1_1database_1_1Database}{Database}} sy\+Blast\+::database\+::\+DB\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{namespacesyBlast_1_1database_af554def05719a8b7f667b138d63667a8}\label{namespacesyBlast_1_1database_af554def05719a8b7f667b138d63667a8} 
+\index{syBlast::database@{syBlast::database}!FuncParamDB@{FuncParamDB}}
+\index{FuncParamDB@{FuncParamDB}!syBlast::database@{syBlast::database}}
+\doxysubsubsection{\texorpdfstring{FuncParamDB}{FuncParamDB}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classsyBlast_1_1database_1_1OptimalFunctionParameters}{Optimal\+Function\+Parameters}} sy\+Blast\+::database\+::\+Func\+Param\+DB(\mbox{\hyperlink{namespacesyBlast_1_1database_a2e568e291471687aad1c28adb8ba6068}{DB}}, sycl\+::device\{\}.get\+\_\+info$<$ sycl\+::info\+::device\+::name $>$()) (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesyBlast_1_1database_a2e568e291471687aad1c28adb8ba6068}{DB}}}]{,  }\item[{sycl\+::device\{\}.get\+\_\+info$<$ sycl\+::info\+::device\+::name $>$}]{() }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{namespacesyBlast_1_1database_a0340d7161309b4223b97f0efcb30896e}\label{namespacesyBlast_1_1database_a0340d7161309b4223b97f0efcb30896e} 
+\index{syBlast::database@{syBlast::database}!NUMBER\_OF\_BLAS\_FUNCTIONS@{NUMBER\_OF\_BLAS\_FUNCTIONS}}
+\index{NUMBER\_OF\_BLAS\_FUNCTIONS@{NUMBER\_OF\_BLAS\_FUNCTIONS}!syBlast::database@{syBlast::database}}
+\doxysubsubsection{\texorpdfstring{NUMBER\_OF\_BLAS\_FUNCTIONS}{NUMBER\_OF\_BLAS\_FUNCTIONS}}
+{\footnotesize\ttfamily constexpr short sy\+Blast\+::database\+::\+NUMBER\+\_\+\+OF\+\_\+\+BLAS\+\_\+\+FUNCTIONS = sizeof(\mbox{\hyperlink{namespacesyBlast_ad7994e16ff098d0f20659eb404d3487e}{BLAS\+\_\+\+NAMES}}) / sizeof(\mbox{\hyperlink{namespacesyBlast_ad7994e16ff098d0f20659eb404d3487e}{BLAS\+\_\+\+NAMES}}\mbox{[}0\mbox{]})\hspace{0.3cm}{\ttfamily [constexpr]}}
+

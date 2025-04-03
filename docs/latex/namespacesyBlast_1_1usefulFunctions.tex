@@ -1,0 +1,47 @@
+\doxysection{sy\+Blast\+::useful\+Functions Namespace Reference}
+\hypertarget{namespacesyBlast_1_1usefulFunctions}{}\label{namespacesyBlast_1_1usefulFunctions}\index{syBlast::usefulFunctions@{syBlast::usefulFunctions}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$auto \texorpdfstring{$\ast$}{*} Func\+Table, typename... Args$>$ }\\void \mbox{\hyperlink{namespacesyBlast_1_1usefulFunctions_af3e5deab23fc2a9acdefa9ef84abe0dc}{function\+Selector}} (int function\+Number, Args \&\&...args)
+\begin{DoxyCompactList}\small\item\em Calls a function from a function table based on the given function number. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int N$>$ }\\int \mbox{\hyperlink{namespacesyBlast_1_1usefulFunctions_a198076b580fee350cb3b8f76b1f59874}{function\+Index}} (int index)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacesyBlast_1_1usefulFunctions_a198076b580fee350cb3b8f76b1f59874}\label{namespacesyBlast_1_1usefulFunctions_a198076b580fee350cb3b8f76b1f59874} 
+\index{syBlast::usefulFunctions@{syBlast::usefulFunctions}!functionIndex@{functionIndex}}
+\index{functionIndex@{functionIndex}!syBlast::usefulFunctions@{syBlast::usefulFunctions}}
+\doxysubsubsection{\texorpdfstring{functionIndex()}{functionIndex()}}
+{\footnotesize\ttfamily template$<$int N$>$ \\
+int sy\+Blast\+::useful\+Functions\+::function\+Index (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacesyBlast_1_1usefulFunctions_af3e5deab23fc2a9acdefa9ef84abe0dc}\label{namespacesyBlast_1_1usefulFunctions_af3e5deab23fc2a9acdefa9ef84abe0dc} 
+\index{syBlast::usefulFunctions@{syBlast::usefulFunctions}!functionSelector@{functionSelector}}
+\index{functionSelector@{functionSelector}!syBlast::usefulFunctions@{syBlast::usefulFunctions}}
+\doxysubsubsection{\texorpdfstring{functionSelector()}{functionSelector()}}
+{\footnotesize\ttfamily template$<$auto \texorpdfstring{$\ast$}{*} Func\+Table, typename... Args$>$ \\
+void sy\+Blast\+::useful\+Functions\+::function\+Selector (\begin{DoxyParamCaption}\item[{int}]{function\+Number,  }\item[{Args \&\&...}]{args }\end{DoxyParamCaption})}
+
+
+
+Calls a function from a function table based on the given function number. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Func\+Table} & A pointer to an array of function pointers. \\
+\hline
+{\em Args} & Variadic template parameters representing the argument types of the function. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em function\+Number} & The index of the function to call from the function table. \\
+\hline
+{\em args} & Arguments to be forwarded to the selected function.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function assumes that the function table is properly initialized and that function\+Number is within valid bounds. 
+\end{DoxyNote}

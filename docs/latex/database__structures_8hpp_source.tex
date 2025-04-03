@@ -1,0 +1,164 @@
+\doxysection{database\+\_\+structures.\+hpp}
+\hypertarget{database__structures_8hpp_source}{}\label{database__structures_8hpp_source}\index{SYCL-\/BLAS/Database/database\_structures.hpp@{SYCL-\/BLAS/Database/database\_structures.hpp}}
+\mbox{\hyperlink{database__structures_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <sycl/sycl.hpp>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesyBlast}{syBlast}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{namespacesyBlast_ad7994e16ff098d0f20659eb404d3487e}{BLAS\_NAMES}}[]\ =}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}saxpy"{}},}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}daxpy"{}},}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}caxpy"{}},}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}zaxpy"{}},}
+\DoxyCodeLine{00018\ \ \ \ \ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4f}{BLAS\_ENUM\_NAMES}}}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4fa04f4c22b3397be3cc13c5bb438645e5d}{SAXPY}}\ =\ 0,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4fa04405c8e3f71edff5932cd0554170d89}{DAXPY}}\ =\ 1,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4fa97ddc22eb4686e0804a8fa2124f15461}{CAXPY}}\ =\ 2,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4fa806a39a4a697f1e4a6af6ae8cabbd497}{ZAXPY}}\ =\ 3}
+\DoxyCodeLine{00026\ \ \ \ \ \};}
+\DoxyCodeLine{00027\ \ \ \ \ ;}
+\DoxyCodeLine{00028\ \ \ \ \ ;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{namespace\ }parameters}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsyBlast_1_1parameters_1_1FunctionParameters}{FunctionParameters}}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ uint64\_t\ \mbox{\hyperlink{classsyBlast_1_1parameters_1_1FunctionParameters_aa1efa7ffbcd8d5414715efd6e1fbe339}{Parameters}}[16];}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classsyBlast_1_1parameters_1_1FunctionParameters_a7f6085c705fb66e52471ab31ca6c6ebe}{FunctionParameters}}(}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint64\_t\ p0\ =\ 0,\ uint64\_t\ p1\ =\ 0,\ uint64\_t\ p2\ =\ 0,\ uint64\_t\ p3\ =\ 0,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint64\_t\ p4\ =\ 0,\ uint64\_t\ p5\ =\ 0,\ uint64\_t\ p6\ =\ 0,\ uint64\_t\ p7\ =\ 0,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint64\_t\ p8\ =\ 0,\ uint64\_t\ p9\ =\ 0,\ uint64\_t\ p10\ =\ 0,\ uint64\_t\ p11\ =\ 0,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint64\_t\ p12\ =\ 0,\ uint64\_t\ p13\ =\ 0,\ uint64\_t\ p14\ =\ 0,\ uint64\_t\ p15\ =\ 0)\ :\ \mbox{\hyperlink{classsyBlast_1_1parameters_1_1FunctionParameters_aa1efa7ffbcd8d5414715efd6e1fbe339}{Parameters}}\{p0,\ p1,\ p2,\ p3,\ p4,\ p5,\ p6,\ p7,\ p8,\ p9,\ p10,\ p11,\ p12,\ p13,\ p14,\ p15\}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ uint64\_t\ \&\mbox{\hyperlink{classsyBlast_1_1parameters_1_1FunctionParameters_a07106d1048ed03b33c607aef2e18db68}{operator[]}}(\textcolor{keywordtype}{size\_t}\ index)\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classsyBlast_1_1parameters_1_1FunctionParameters_aa1efa7ffbcd8d5414715efd6e1fbe339}{Parameters}}[index];}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ uint64\_t\ \&\mbox{\hyperlink{classsyBlast_1_1parameters_1_1FunctionParameters_a6ef31577b2340b1b5b919b3c76bb2d0e}{operator[]}}(\textcolor{keywordtype}{size\_t}\ index)\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classsyBlast_1_1parameters_1_1FunctionParameters_aa1efa7ffbcd8d5414715efd6e1fbe339}{Parameters}}[index];}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{namespace\ }database}
+\DoxyCodeLine{00058\ \ \ \ \ \{}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{namespacesyBlast_1_1database_a0340d7161309b4223b97f0efcb30896e}{NUMBER\_OF\_BLAS\_FUNCTIONS}}\ =\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespacesyBlast_ad7994e16ff098d0f20659eb404d3487e}{BLAS\_NAMES}})\ /\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespacesyBlast_ad7994e16ff098d0f20659eb404d3487e}{BLAS\_NAMES}}[0]);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespacesyBlast_1_1database_a5f36f1cbdbd91a868b1fdb76509dadc2}{DeviceName}}\ =\ std::string;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classsyBlast_1_1parameters_1_1FunctionParameters}{Parameters}}\ =\ \mbox{\hyperlink{classsyBlast_1_1parameters_1_1FunctionParameters}{parameters::FunctionParameters}};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseEntry}{DataBaseEntry}}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<DeviceName>\ \mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseEntry_a3d442f2855e742c6597e6471b9686d19}{names}};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classsyBlast_1_1parameters_1_1FunctionParameters}{Parameters}}\ \mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseEntry_a6b8bb1f84fc1818a2acba4bdb5e22581}{parameters}};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseEntry_a1b73719e8f1f44f6fb12734a52395f98}{containsDevice}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacesyBlast_1_1database_a5f36f1cbdbd91a868b1fdb76509dadc2}{DeviceName}}\ \&device)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00071\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::find(\mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseEntry_a3d442f2855e742c6597e6471b9686d19}{names}}.begin(),\ \mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseEntry_a3d442f2855e742c6597e6471b9686d19}{names}}.end(),\ device)\ !=\ \mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseEntry_a3d442f2855e742c6597e6471b9686d19}{names}}.end();}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \}\ DataBaseEntry;}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseTable}{DataBaseTable}}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseTable_a7c62d270f408fc76a597edbd43a4600b}{FunctionName}};}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<DataBaseEntry>\ \mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseTable_a1c7ff4361811aad7c161e912573f11a6}{entries}};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classsyBlast_1_1parameters_1_1FunctionParameters}{Parameters}}\ \mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseTable_a92c11dd0eb0e46fae0bd5187ab55a458}{getParametersForDevice}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacesyBlast_1_1database_a5f36f1cbdbd91a868b1fdb76509dadc2}{DeviceName}}\ \&device)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00083\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&entry\ :\ \mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseTable_a1c7ff4361811aad7c161e912573f11a6}{entries}})}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (entry.containsDevice(device))}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ entry.parameters;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacesyBlast_1_1database_aa1e43de62b121caa4e5ebc17550eb349}{Parameters}}();}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \}\ DataBaseTable;}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ DataBaseTable\ \mbox{\hyperlink{namespacesyBlast_1_1database_a0dfff9e0cd1b671c51b55630e24be5ad}{saxpyTable}}();}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsyBlast_1_1database_1_1Database}{Database}}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseTable}{DataBaseTable}}\ *\mbox{\hyperlink{classsyBlast_1_1database_1_1Database_ae782f000a8f95839a97c907d70df90e3}{tables}};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classsyBlast_1_1database_1_1Database_a95bd7992add95f5f4850c47f1e8e017f}{Database}}()}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classsyBlast_1_1database_1_1Database_ae782f000a8f95839a97c907d70df90e3}{tables}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseTable}{DataBaseTable}}[\mbox{\hyperlink{namespacesyBlast_1_1database_a0340d7161309b4223b97f0efcb30896e}{NUMBER\_OF\_BLAS\_FUNCTIONS}}];}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{namespacesyBlast_1_1database_a0340d7161309b4223b97f0efcb30896e}{NUMBER\_OF\_BLAS\_FUNCTIONS}};\ ++i)}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classsyBlast_1_1database_1_1Database_ae782f000a8f95839a97c907d70df90e3}{tables}}[i]\ =\ \{\textcolor{stringliteral}{"{}"{}},\ \{\}\};}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classsyBlast_1_1database_1_1Database_ae782f000a8f95839a97c907d70df90e3}{tables}}[(int)\mbox{\hyperlink{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4fa04f4c22b3397be3cc13c5bb438645e5d}{BLAS\_ENUM\_NAMES::SAXPY}}]\ =\ \mbox{\hyperlink{namespacesyBlast_1_1database_a0dfff9e0cd1b671c51b55630e24be5ad}{saxpyTable}}();}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classsyBlast_1_1database_1_1Database_a27fd53a9e1b2a39b2b3f36518ea35251}{\string~Database}}()}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{classsyBlast_1_1database_1_1Database_ae782f000a8f95839a97c907d70df90e3}{tables}};}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsyBlast_1_1database_1_1OptimalFunctionParameters}{OptimalFunctionParameters}}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classsyBlast_1_1parameters_1_1FunctionParameters}{Parameters}}\ *\mbox{\hyperlink{classsyBlast_1_1database_1_1OptimalFunctionParameters_aab8ade52269ddde3cc43286054585189}{optimalFunctionParameters}};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classsyBlast_1_1database_1_1OptimalFunctionParameters_ab49e8a1e43d4af374f6363be7dc29ba2}{OptimalFunctionParameters}}()}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classsyBlast_1_1database_1_1OptimalFunctionParameters_aab8ade52269ddde3cc43286054585189}{optimalFunctionParameters}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classsyBlast_1_1parameters_1_1FunctionParameters}{Parameters}}[\mbox{\hyperlink{namespacesyBlast_1_1database_a0340d7161309b4223b97f0efcb30896e}{NUMBER\_OF\_BLAS\_FUNCTIONS}}];}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{namespacesyBlast_1_1database_a0340d7161309b4223b97f0efcb30896e}{NUMBER\_OF\_BLAS\_FUNCTIONS}};\ ++i)}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classsyBlast_1_1database_1_1OptimalFunctionParameters_aab8ade52269ddde3cc43286054585189}{optimalFunctionParameters}}[i]\ =\ \mbox{\hyperlink{namespacesyBlast_1_1database_aa1e43de62b121caa4e5ebc17550eb349}{Parameters}}();}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classsyBlast_1_1database_1_1OptimalFunctionParameters_a95cd1e9e11d9215714a85010b9bfc145}{OptimalFunctionParameters}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classsyBlast_1_1database_1_1Database}{Database}}\ \&db,\ std::string\ device)}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classsyBlast_1_1database_1_1OptimalFunctionParameters_aab8ade52269ddde3cc43286054585189}{optimalFunctionParameters}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classsyBlast_1_1parameters_1_1FunctionParameters}{Parameters}}[\mbox{\hyperlink{namespacesyBlast_1_1database_a0340d7161309b4223b97f0efcb30896e}{NUMBER\_OF\_BLAS\_FUNCTIONS}}];}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{namespacesyBlast_1_1database_a0340d7161309b4223b97f0efcb30896e}{NUMBER\_OF\_BLAS\_FUNCTIONS}};\ ++i)}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classsyBlast_1_1database_1_1OptimalFunctionParameters_aab8ade52269ddde3cc43286054585189}{optimalFunctionParameters}}[i]\ =\ db.\mbox{\hyperlink{classsyBlast_1_1database_1_1Database_ae782f000a8f95839a97c907d70df90e3}{tables}}[i].\mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseTable_a92c11dd0eb0e46fae0bd5187ab55a458}{getParametersForDevice}}(device);}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classsyBlast_1_1database_1_1OptimalFunctionParameters_a9a4324e68dc976d68ed058321a60e53c}{\string~OptimalFunctionParameters}}()}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{classsyBlast_1_1database_1_1OptimalFunctionParameters_aab8ade52269ddde3cc43286054585189}{optimalFunctionParameters}};}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classsyBlast_1_1parameters_1_1FunctionParameters}{Parameters}}\ \&\mbox{\hyperlink{classsyBlast_1_1database_1_1OptimalFunctionParameters_aae3c3db2db6c0a24dd620244a954e924}{operator[]}}(\mbox{\hyperlink{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4f}{BLAS\_ENUM\_NAMES}}\ func)\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classsyBlast_1_1database_1_1OptimalFunctionParameters_aab8ade52269ddde3cc43286054585189}{optimalFunctionParameters}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{short}\textcolor{keyword}{>}(func)];}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classsyBlast_1_1parameters_1_1FunctionParameters}{Parameters}}\ \&\mbox{\hyperlink{classsyBlast_1_1database_1_1OptimalFunctionParameters_ad1d34acaa0db476d161053502db6995f}{operator[]}}(\mbox{\hyperlink{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4f}{BLAS\_ENUM\_NAMES}}\ func)\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classsyBlast_1_1database_1_1OptimalFunctionParameters_aab8ade52269ddde3cc43286054585189}{optimalFunctionParameters}}[\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{short}\textcolor{keyword}{>}(func)];}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \}}
+\DoxyCodeLine{00158\ \}}
+
+\end{DoxyCode}

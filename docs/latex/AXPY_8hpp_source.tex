@@ -1,0 +1,34 @@
+\doxysection{AXPY.\+hpp}
+\hypertarget{AXPY_8hpp_source}{}\label{AXPY_8hpp_source}\index{SYCL-\/BLAS/Level1/AXPY/AXPY.hpp@{SYCL-\/BLAS/Level1/AXPY/AXPY.hpp}}
+\mbox{\hyperlink{AXPY_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <sycl/sycl.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../../Database/database\_structures.hpp"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00009\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{AXPY_8hpp_a3e20d96bcf409b4f5a16fe36d6477c9c}{axpy}}(}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{const}\ uint64\_t\ N,}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{const}\ T\ alpha,}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{const}\ T\ *x,}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ incx,}
+\DoxyCodeLine{00014\ \ \ \ \ T\ *y,}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ incy,}
+\DoxyCodeLine{00016\ \ \ \ \ sycl::queue\ q,}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classsyBlast_1_1parameters_1_1FunctionParameters}{syBlast::database::Parameters}}\ p)}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ q.submit(}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ [\&](sycl::handler\ \&handler)}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ handler.parallel\_for(sycl::range<1>(N),\ [=](sycl::id<1>\ i)}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ int64\_t\ Xindex\ =\ i[0]\ *\ incx;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ int64\_t\ Yindex\ =\ i[0]\ *\ incy;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ y[Yindex]\ +=\ alpha\ *\ x[Xindex];\ \});}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00028\ \}}
+
+\end{DoxyCode}

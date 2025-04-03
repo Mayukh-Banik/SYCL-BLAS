@@ -1,0 +1,24 @@
+\doxysection{blas\+\_\+c.\+hpp}
+\hypertarget{blas__c_8hpp_source}{}\label{blas__c_8hpp_source}\index{SYCL-\/BLAS/blas\_c.hpp@{SYCL-\/BLAS/blas\_c.hpp}}
+\mbox{\hyperlink{blas__c_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{blas_8hpp}{blas.hpp}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <complex>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ Define\ a\ macro\ for\ exporting\ symbols}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#if\ defined(\_WIN32)\ ||\ defined(\_WIN64)}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ EXPORT\_SYMBOL\ \_\_declspec(dllexport)}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ EXPORT\_SYMBOL\ }}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{blas__c_8hpp_ab57c319c35ea0fbacf781f2ecb3a4339}{EXPORT\_SYMBOL}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{blas__c_8hpp_ac142dc5c872caff26cc1bb96dd5db710}{saxpy}}(\textcolor{keywordtype}{int}\ n,\ \textcolor{keywordtype}{float}\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ *x,\ \textcolor{keywordtype}{int}\ incx,\ \textcolor{keywordtype}{float}\ *y,\ \textcolor{keywordtype}{int}\ incy);}
+\DoxyCodeLine{00017\ \ \ \ \ }
+\DoxyCodeLine{00018\ \}}
+
+\end{DoxyCode}

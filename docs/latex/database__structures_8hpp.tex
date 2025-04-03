@@ -1,0 +1,65 @@
+\doxysection{SYCL-\/\+BLAS/\+Database/database\+\_\+structures.hpp File Reference}
+\hypertarget{database__structures_8hpp}{}\label{database__structures_8hpp}\index{SYCL-\/BLAS/Database/database\_structures.hpp@{SYCL-\/BLAS/Database/database\_structures.hpp}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$sycl/sycl.\+hpp$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+Include dependency graph for database\+\_\+structures.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsyBlast_1_1parameters_1_1FunctionParameters}{sy\+Blast\+::parameters\+::\+Function\+Parameters}}
+\item 
+struct \mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseEntry}{sy\+Blast\+::database\+::\+Data\+Base\+Entry}}
+\item 
+struct \mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseTable}{sy\+Blast\+::database\+::\+Data\+Base\+Table}}
+\item 
+class \mbox{\hyperlink{classsyBlast_1_1database_1_1Database}{sy\+Blast\+::database\+::\+Database}}
+\item 
+class \mbox{\hyperlink{classsyBlast_1_1database_1_1OptimalFunctionParameters}{sy\+Blast\+::database\+::\+Optimal\+Function\+Parameters}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesyBlast}{sy\+Blast}}
+\item 
+namespace \mbox{\hyperlink{namespacesyBlast_1_1parameters}{sy\+Blast\+::parameters}}
+\item 
+namespace \mbox{\hyperlink{namespacesyBlast_1_1database}{sy\+Blast\+::database}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespacesyBlast_1_1database_a5f36f1cbdbd91a868b1fdb76509dadc2}{sy\+Blast\+::database\+::\+Device\+Name}} = std\+::string
+\item 
+using \mbox{\hyperlink{namespacesyBlast_1_1database_aa1e43de62b121caa4e5ebc17550eb349}{sy\+Blast\+::database\+::\+Parameters}} = \mbox{\hyperlink{classsyBlast_1_1parameters_1_1FunctionParameters}{parameters\+::\+Function\+Parameters}}
+\item 
+typedef struct \mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseEntry}{sy\+Blast\+::database\+::\+Data\+Base\+Entry}} \mbox{\hyperlink{namespacesyBlast_1_1database_abc58be992e474f1288cd21e07d9bc7fe}{sy\+Blast\+::database\+::\+Data\+Base\+Entry}}
+\item 
+typedef struct \mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseTable}{sy\+Blast\+::database\+::\+Data\+Base\+Table}} \mbox{\hyperlink{namespacesyBlast_1_1database_a30d705a0e658c564e9825472fb7519f7}{sy\+Blast\+::database\+::\+Data\+Base\+Table}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4f}{sy\+Blast\+::\+BLAS\+\_\+\+ENUM\+\_\+\+NAMES}} \{ \mbox{\hyperlink{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4fa04f4c22b3397be3cc13c5bb438645e5d}{sy\+Blast\+::\+SAXPY}} = 0
+, \mbox{\hyperlink{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4fa04405c8e3f71edff5932cd0554170d89}{sy\+Blast\+::\+DAXPY}} = 1
+, \mbox{\hyperlink{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4fa97ddc22eb4686e0804a8fa2124f15461}{sy\+Blast\+::\+CAXPY}} = 2
+, \mbox{\hyperlink{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4fa806a39a4a697f1e4a6af6ae8cabbd497}{sy\+Blast\+::\+ZAXPY}} = 3
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structsyBlast_1_1database_1_1DataBaseTable}{Data\+Base\+Table}} \mbox{\hyperlink{namespacesyBlast_1_1database_a0dfff9e0cd1b671c51b55630e24be5ad}{sy\+Blast\+::database\+::saxpy\+Table}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacesyBlast_ad7994e16ff098d0f20659eb404d3487e}{sy\+Blast\+::\+BLAS\+\_\+\+NAMES}} \mbox{[}$\,$\mbox{]}
+\item 
+constexpr short \mbox{\hyperlink{namespacesyBlast_1_1database_a0340d7161309b4223b97f0efcb30896e}{sy\+Blast\+::database\+::\+NUMBER\+\_\+\+OF\+\_\+\+BLAS\+\_\+\+FUNCTIONS}} = sizeof(\mbox{\hyperlink{namespacesyBlast_ad7994e16ff098d0f20659eb404d3487e}{BLAS\+\_\+\+NAMES}}) / sizeof(\mbox{\hyperlink{namespacesyBlast_ad7994e16ff098d0f20659eb404d3487e}{BLAS\+\_\+\+NAMES}}\mbox{[}0\mbox{]})
+\end{DoxyCompactItemize}

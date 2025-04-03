@@ -1,0 +1,91 @@
+\doxysection{sy\+Blast Namespace Reference}
+\hypertarget{namespacesyBlast}{}\label{namespacesyBlast}\index{syBlast@{syBlast}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesyBlast_1_1database}{database}}
+\item 
+namespace \mbox{\hyperlink{namespacesyBlast_1_1NumericFunctions}{Numeric\+Functions}}
+\item 
+namespace \mbox{\hyperlink{namespacesyBlast_1_1parameters}{parameters}}
+\item 
+namespace \mbox{\hyperlink{namespacesyBlast_1_1usefulFunctions}{useful\+Functions}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4f}{BLAS\+\_\+\+ENUM\+\_\+\+NAMES}} \{ \mbox{\hyperlink{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4fa04f4c22b3397be3cc13c5bb438645e5d}{SAXPY}} = 0
+, \mbox{\hyperlink{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4fa04405c8e3f71edff5932cd0554170d89}{DAXPY}} = 1
+, \mbox{\hyperlink{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4fa97ddc22eb4686e0804a8fa2124f15461}{CAXPY}} = 2
+, \mbox{\hyperlink{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4fa806a39a4a697f1e4a6af6ae8cabbd497}{ZAXPY}} = 3
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespacesyBlast_a8c9e3afb93ad883f75e04e11510d3990}{saxpy}} (const uint64\+\_\+t N, const float alpha, const float \texorpdfstring{$\ast$}{*}x, const int incx, float \texorpdfstring{$\ast$}{*}y, const int incy, sycl\+::queue q=sycl\+::queue(), \mbox{\hyperlink{namespacesyBlast_1_1database_aa1e43de62b121caa4e5ebc17550eb349}{database\+::\+Parameters}} p=\mbox{\hyperlink{namespacesyBlast_1_1database_af554def05719a8b7f667b138d63667a8}{database\+::\+Func\+Param\+DB}}\mbox{[}\mbox{\hyperlink{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4fa04f4c22b3397be3cc13c5bb438645e5d}{BLAS\+\_\+\+ENUM\+\_\+\+NAMES\+::\+SAXPY}}\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacesyBlast_ad7994e16ff098d0f20659eb404d3487e}{BLAS\+\_\+\+NAMES}} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Location for all Net\+Lib conformant C style functions from library SYCL-\/\+BLAS. All functions located here will follow Net\+Lib style naming and function parameters. 
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4f}\label{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4f} 
+\index{syBlast@{syBlast}!BLAS\_ENUM\_NAMES@{BLAS\_ENUM\_NAMES}}
+\index{BLAS\_ENUM\_NAMES@{BLAS\_ENUM\_NAMES}!syBlast@{syBlast}}
+\doxysubsubsection{\texorpdfstring{BLAS\_ENUM\_NAMES}{BLAS\_ENUM\_NAMES}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4f}{sy\+Blast\+::\+BLAS\+\_\+\+ENUM\+\_\+\+NAMES}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SAXPY@{SAXPY}!syBlast@{syBlast}}\index{syBlast@{syBlast}!SAXPY@{SAXPY}}}\Hypertarget{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4fa04f4c22b3397be3cc13c5bb438645e5d}\label{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4fa04f4c22b3397be3cc13c5bb438645e5d} 
+SAXPY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DAXPY@{DAXPY}!syBlast@{syBlast}}\index{syBlast@{syBlast}!DAXPY@{DAXPY}}}\Hypertarget{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4fa04405c8e3f71edff5932cd0554170d89}\label{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4fa04405c8e3f71edff5932cd0554170d89} 
+DAXPY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CAXPY@{CAXPY}!syBlast@{syBlast}}\index{syBlast@{syBlast}!CAXPY@{CAXPY}}}\Hypertarget{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4fa97ddc22eb4686e0804a8fa2124f15461}\label{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4fa97ddc22eb4686e0804a8fa2124f15461} 
+CAXPY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ZAXPY@{ZAXPY}!syBlast@{syBlast}}\index{syBlast@{syBlast}!ZAXPY@{ZAXPY}}}\Hypertarget{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4fa806a39a4a697f1e4a6af6ae8cabbd497}\label{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4fa806a39a4a697f1e4a6af6ae8cabbd497} 
+ZAXPY&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacesyBlast_a8c9e3afb93ad883f75e04e11510d3990}\label{namespacesyBlast_a8c9e3afb93ad883f75e04e11510d3990} 
+\index{syBlast@{syBlast}!saxpy@{saxpy}}
+\index{saxpy@{saxpy}!syBlast@{syBlast}}
+\doxysubsubsection{\texorpdfstring{saxpy()}{saxpy()}}
+{\footnotesize\ttfamily void sy\+Blast\+::saxpy (\begin{DoxyParamCaption}\item[{const uint64\+\_\+t}]{N,  }\item[{const float}]{alpha,  }\item[{const float \texorpdfstring{$\ast$}{*}}]{x,  }\item[{const int}]{incx,  }\item[{float \texorpdfstring{$\ast$}{*}}]{y,  }\item[{const int}]{incy,  }\item[{sycl\+::queue}]{q = {\ttfamily sycl\+:\+:queue()},  }\item[{\mbox{\hyperlink{namespacesyBlast_1_1database_aa1e43de62b121caa4e5ebc17550eb349}{database\+::\+Parameters}}}]{p = {\ttfamily \mbox{\hyperlink{namespacesyBlast_1_1database_af554def05719a8b7f667b138d63667a8}{database\+::\+Func\+Param\+DB}}\mbox{[}\mbox{\hyperlink{namespacesyBlast_a5cd0ca4d3100254a2dee5f9f7fc43e4fa04f4c22b3397be3cc13c5bb438645e5d}{BLAS\+\_\+\+ENUM\+\_\+\+NAMES\+::\+SAXPY}}\mbox{]}} }\end{DoxyParamCaption})}
+
+This is documentation 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacesyBlast_ad7994e16ff098d0f20659eb404d3487e}\label{namespacesyBlast_ad7994e16ff098d0f20659eb404d3487e} 
+\index{syBlast@{syBlast}!BLAS\_NAMES@{BLAS\_NAMES}}
+\index{BLAS\_NAMES@{BLAS\_NAMES}!syBlast@{syBlast}}
+\doxysubsubsection{\texorpdfstring{BLAS\_NAMES}{BLAS\_NAMES}}
+{\footnotesize\ttfamily constexpr const char\texorpdfstring{$\ast$}{*} sy\+Blast\+::\+BLAS\+\_\+\+NAMES\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}saxpy"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}daxpy"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}caxpy"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}zaxpy"{}},}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
