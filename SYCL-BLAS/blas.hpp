@@ -39,6 +39,9 @@ extern "C"
 {
     namespace syBlast
     {
+        /**
+         * This is documentation
+         */
         void saxpy(const uint64_t N, const float alpha, const float *x, const int incx, float *y, const int incy, sycl::queue q = sycl::queue(), database::Parameters p = database::FuncParamDB[BLAS_ENUM_NAMES::SAXPY]);
 
     }
