@@ -1,0 +1,31 @@
+name: Deploy Documentation
+
+on:
+  push:
+    branches:
+      - main  # Change this if your default branch is different
+
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository with submodules
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive  # Ensures submodules are initialized
+
+      - name: Install Doxygen
+        run: sudo apt update && sudo apt install -y doxygen
+
+      - name: Generate documentation
+        run: doxygen Doxyfile
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: docs/html  # The folder containing generated HTML
+          clean: true  # Deletes old files before deploying
