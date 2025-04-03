@@ -12,8 +12,8 @@ set_target_properties(syBlast PROPERTIES
 POSITION_INDEPENDENT_CODE ON
 )
 
-add_subdirectory("Level1")
-add_subdirectory("Database")
+# add_subdirectory("Level1")
+# add_subdirectory("Database")
 
 target_include_directories(syBlast
     PUBLIC
@@ -29,4 +29,5 @@ if(MSVC)
 else()
     set(CMAKE_CXX_FLAGS -O3)
 endif()
+target_sources(syBlast PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/blas.cpp)
 add_library(syBlast::syBlast ALIAS syBlast)
