@@ -8,7 +8,7 @@
 #if defined(_WIN32) || defined(_WIN64)
 #define EXPORT_SYMBOL __declspec(dllexport)
 #else
-#define EXPORT_SYMBOL 
+#define EXPORT_SYMBOL __attribute__((visibility("default")))
 #endif
 
 /**
@@ -35,14 +35,11 @@
  * Location for all NetLib conformant C style functions from library SYCL-BLAS.
  * All functions located here will follow NetLib style naming and function parameters.
  */
-extern "C"
+namespace syBlast
 {
-    namespace syBlast
-    {
-        /**
-         * This is documentation
-         */
-        void saxpy(const uint64_t N, const float alpha, const float *x, const int incx, float *y, const int incy, sycl::queue q = sycl::queue(), database::Parameters p = database::FuncParamDB[BLAS_ENUM_NAMES::SAXPY]);
-
-    }
+    /**
+     * This is documentation
+     */
+     void saxpy(const uint64_t N, const float alpha, const float *x, const int incx, float *y, const int incy, sycl::queue q = sycl::queue(), database::Parameters p = database::FuncParamDB[BLAS_ENUM_NAMES::SAXPY]);
 }
+

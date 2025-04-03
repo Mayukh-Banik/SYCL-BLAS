@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.28)
 
-project(SYCL-BLAS)
+project(syBlast)
 
-add_subdirectory(SYCL-BLAS)
+add_subdirectory(syBlast)
 
 option(ENABLE_TESTING "Enable testing" OFF)
 
