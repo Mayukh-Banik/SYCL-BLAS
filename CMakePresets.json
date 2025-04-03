@@ -39,8 +39,7 @@
       "name": "tests",
       "displayName": "Build with Tests",
       "configurePreset": "tests"
-    }
-    ,
+    },
     {
       "name": "default",
       "displayName": "Build Default",

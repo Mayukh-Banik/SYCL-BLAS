@@ -6,10 +6,11 @@ project(syBlast LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_library(syBlast STATIC)
-# set_target_properties(syBlast PROPERTIES 
-# # POSITION_INDEPENDENT_CODE ON
-# )
+add_library(syBlast SHARED)
+set(CMAKE_STATIC_LIBRARY_PREFIX "")
+set_target_properties(syBlast PROPERTIES 
+POSITION_INDEPENDENT_CODE ON
+)
 
 add_subdirectory("Level1")
 add_subdirectory("Database")

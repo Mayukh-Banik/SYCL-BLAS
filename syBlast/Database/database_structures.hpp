@@ -24,8 +24,6 @@ namespace syBlast
         CAXPY = 2,
         ZAXPY = 3
     };
-    ;
-    ;
 
     namespace parameters
     {

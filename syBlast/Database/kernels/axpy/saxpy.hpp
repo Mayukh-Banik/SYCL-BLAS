@@ -8,13 +8,10 @@ namespace syBlast
     {
         DataBaseTable saxpyTable()
         {
-            DataBaseTable a = 
+            return 
             {
-                "saxpy", 
-                {
-                }
+                
             };
-            return a;
         }
     }
 }
