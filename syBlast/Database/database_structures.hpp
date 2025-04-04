@@ -8,25 +8,60 @@
 
 namespace syBlast
 {
-
+    /**
+     * @brief Array of BLAS function names as constant strings.
+     *
+     * This array contains the names of the BLAS (Basic Linear Algebra Subprograms)
+     * functions supported by the database. Each name corresponds to a specific
+     * BLAS function, and the order of the names matches the order of the
+     * BLAS_ENUM_NAMES enumeration.
+     *
+     */
     constexpr const char *BLAS_NAMES[] =
         {
             "saxpy",
             "daxpy",
             "caxpy",
             "zaxpy",
+            "sscal",
+            "dscal",
+            "cscal",
+            "zscal",
+            "csscal",
+            "zsscal"
     };
 
+    /**
+     * @brief Enumeration of BLAS function names.
+     *
+     * This enumeration defines the identifiers for the BLAS
+     * functions supported by the database. Each enumerator corresponds to a specific BLAS function,
+     * and its value matches the index of the function name in the `BLAS_NAMES` array.
+     */
     enum class BLAS_ENUM_NAMES
     {
         SAXPY = 0,
         DAXPY = 1,
         CAXPY = 2,
-        ZAXPY = 3
-    };
+        ZAXPY = 3,
+        SSCAL = 4,
+        DSCAL = 5,
+        CSCAL = 6,
+        ZSCAL = 7,
+        CSSCAL = 8,
+        ZSSCAL = 9,
+    };;
 
     namespace parameters
     {
+        /**
+         * @brief Function Parameters for all syBlast Functions
+         * 
+         * FunctionParameters stores all the parameters that can be used by a BLAS function.
+         * Parameters[0] refers to function index. Each BLAS function can use multiple different functions (recursion vs iterative methods, etc) 
+         * and thus P[0] is always the index, with P[0] == 0 always being the base case with no optimizations, that will work on any platform.
+         * The parameters used by each funtion (AXPY, SCAL, etc) will be noted at the top of their respective .cpp files or "syBlast/Level*\/*"
+         */
         class FunctionParameters
         {
         public:
@@ -55,7 +90,10 @@ namespace syBlast
     namespace database
     {
 
-        constexpr short NUMBER_OF_BLAS_FUNCTIONS = sizeof(BLAS_NAMES) / sizeof(BLAS_NAMES[0]);
+        /**
+         * This will eventually turn into a #define, but while all functions aren't implemented, this will stay.
+         */
+        constexpr unsigned long NUMBER_OF_BLAS_FUNCTIONS = sizeof(BLAS_NAMES) / sizeof(BLAS_NAMES[0]);
 
         using DeviceName = std::string;
         using Parameters = parameters::FunctionParameters;
@@ -95,32 +133,25 @@ namespace syBlast
         class Database
         {
         public:
-            DataBaseTable *tables;
+            DataBaseTable tables[NUMBER_OF_BLAS_FUNCTIONS];
 
             Database()
             {
-                tables = new DataBaseTable[NUMBER_OF_BLAS_FUNCTIONS];
                 for (int i = 0; i < NUMBER_OF_BLAS_FUNCTIONS; ++i)
                 {
                     tables[i] = {"", {}};
                 }
                 tables[(int)BLAS_ENUM_NAMES::SAXPY] = saxpyTable();
             }
-
-            ~Database()
-            {
-                delete[] tables;
-            }
         };
 
         class OptimalFunctionParameters
         {
         public:
-            Parameters *optimalFunctionParameters;
+            Parameters optimalFunctionParameters[NUMBER_OF_BLAS_FUNCTIONS];
 
             OptimalFunctionParameters()
             {
-                optimalFunctionParameters = new Parameters[NUMBER_OF_BLAS_FUNCTIONS];
                 for (int i = 0; i < NUMBER_OF_BLAS_FUNCTIONS; ++i)
                 {
                     optimalFunctionParameters[i] = Parameters();
@@ -129,16 +160,10 @@ namespace syBlast
 
             OptimalFunctionParameters(const Database &db, std::string device)
             {
-                optimalFunctionParameters = new Parameters[NUMBER_OF_BLAS_FUNCTIONS];
                 for (int i = 0; i < NUMBER_OF_BLAS_FUNCTIONS; ++i)
                 {
                     optimalFunctionParameters[i] = db.tables[i].getParametersForDevice(device);
                 }
-            }
-
-            ~OptimalFunctionParameters()
-            {
-                delete[] optimalFunctionParameters;
             }
 
             Parameters &operator[](BLAS_ENUM_NAMES func) noexcept

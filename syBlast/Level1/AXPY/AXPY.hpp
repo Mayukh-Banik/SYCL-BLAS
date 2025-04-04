@@ -5,14 +5,13 @@
 #include "../../Database/database_structures.hpp"
 
 
-
-template <typename T>
+template <typename A, typename B = A, typename C = A>
 void axpy(
     const uint64_t N,
-    const T alpha,
-    const T *x,
+    const A alpha,
+    const B *x,
     const int incx,
-    T *y,
+    C *y,
     const int incy,
     sycl::queue q,
     syBlast::database::Parameters p)
