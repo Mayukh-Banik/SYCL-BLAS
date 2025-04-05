@@ -38,7 +38,7 @@
 namespace syBlast
 {
     /**
-     * @brief Performs the SAXPY operation: y = alpha * x + y
+     * Performs the SAXPY operation: y = alpha * x + y
      *
      * This function computes the single-precision A·X Plus Y (SAXPY) operation,
      * which scales a vector `x` by a scalar `alpha` and adds the result to a vector `y`.
@@ -55,7 +55,7 @@ namespace syBlast
      */
     void saxpy(const uint64_t N, const float alpha, const float *x, const int incx, float *y, const int incy, sycl::queue &q, database::Parameters p = parameters::FunctionParameters());
     /**
-     * @brief Performs the DAXPY operation: y = alpha * x + y
+     * Performs the DAXPY operation: y = alpha * x + y
      *
      * This function computes the double-precision A·X Plus Y (DAXPY) operation,
      * which scales a vector `x` by a scalar `alpha` and adds the result to a vector `y`.
@@ -72,7 +72,7 @@ namespace syBlast
      */
     void daxpy(const uint64_t N, const double alpha, const double *x, const int incx, double *y, const int incy, sycl::queue &q, database::Parameters p = parameters::FunctionParameters());
     /**
-     * @brief Performs the CAXPY operation: y = alpha * x + y
+     * Performs the CAXPY operation: y = alpha * x + y
      *
      * This function computes the single-precision complex A·X Plus Y (CAXPY) operation,
      * which scales a complex vector `x` by a complex scalar `alpha` and adds the result to a complex vector `y`.
@@ -89,7 +89,7 @@ namespace syBlast
      */
     void caxpy(const uint64_t N, const std::complex<float> alpha, const std::complex<float> *x, const int incx, std::complex<float> *y, const int incy, sycl::queue &q, database::Parameters p = parameters::FunctionParameters());
     /**
-     * @brief Performs the ZAXPY operation: y = alpha * x + y
+     * Performs the ZAXPY operation: y = alpha * x + y
      *
      * This function computes the double-precision complex A·X Plus Y (ZAXPY) operation,
      * which scales a complex vector `x` by a complex scalar `alpha` and adds the result to a complex vector `y`.

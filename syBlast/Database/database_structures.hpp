@@ -60,7 +60,7 @@ namespace syBlast
          * FunctionParameters stores all the parameters that can be used by a BLAS function.
          * Parameters[0] refers to function index. Each BLAS function can use multiple different functions (recursion vs iterative methods, etc) 
          * and thus P[0] is always the index, with P[0] == 0 always being the base case with no optimizations, that will work on any platform.
-         * The parameters used by each funtion (AXPY, SCAL, etc) will be noted at the top of their respective .cpp files or "syBlast/Level*\/*"
+         * The parameters used by each funtion (AXPY, SCAL, etc) will be noted at the top of their respective .cpp files or "syBlast/Level/etc"
          */
         class FunctionParameters
         {
