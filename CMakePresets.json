@@ -1,49 +1,31 @@
 {
   "version": 3,
-  "cmakeMinimumRequired": {
-    "major": 3,
-    "minor": 28,
-    "patch": 0
-  },
   "configurePresets": [
     {
-      "name": "base",
-      "hidden": true,
+      "name": "default",
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/build",
       "cacheVariables": {
-        "CMAKE_CXX_COMPILER": "icpx",
-        "CMAKE_CXX_FLAGS": "-O3 -ffast-math -fsycl"
+        "CMAKE_CXX_FLAGS": "-fsycl"
       }
     },
     {
       "name": "tests",
-      "displayName": "Build with Tests Enabled",
-      "description": "Configure project with Google Test integration",
-      "inherits": "base",
+      "inherits": "default",
       "cacheVariables": {
         "ENABLE_TESTING": "ON"
-      }
-    },
-    {
-      "name": "default",
-      "displayName": "Builds Shared Library",
-      "description": "Configure project to build shared library",
-      "inherits": "base",
-      "cacheVariables": {
-      }
+      },
+      "binaryDir": "${sourceDir}/build"
     }
   ],
   "buildPresets": [
     {
-      "name": "tests",
-      "displayName": "Build with Tests",
-      "configurePreset": "tests"
+      "name": "default",
+      "configurePreset": "default"
     },
     {
-      "name": "default",
-      "displayName": "Build Default",
-      "configurePreset": "default"
+      "name": "tests",
+      "configurePreset": "tests"
     }
   ]
 }

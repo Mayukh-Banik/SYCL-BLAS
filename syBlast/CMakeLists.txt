@@ -1,19 +1,24 @@
-cmake_minimum_required(VERSION 3.28)
+set(SOURCE_FILES 
+    kernels/axpy.cpp
+    kernels/scal.cpp
+    )
 
+set(TARGET_NAME syBlast)
 
-project(syBlast LANGUAGES CXX)
+if(WIN32)
+    set(WIN_FLAG "/EHsc")
+endif()
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_library(syBlast SHARED)
-set(CMAKE_STATIC_LIBRARY_PREFIX "")
-set_target_properties(syBlast PROPERTIES 
-POSITION_INDEPENDENT_CODE ON
-)
+set(COMPILE_FLAGS "-fsycl -Wall ${WIN_FLAG}")
+set(LINK_FLAGS "-fsycl")
 
-add_subdirectory("Level1")
-add_subdirectory("Database")
+add_library(${TARGET_NAME} STATIC ${SOURCE_FILES})
+set_target_properties(${TARGET_NAME} PROPERTIES COMPILE_FLAGS "${COMPILE_FLAGS}")
+set_target_properties(${TARGET_NAME} PROPERTIES LINK_FLAGS "${LINK_FLAGS}")
+
 
 target_include_directories(syBlast
     PUBLIC
@@ -21,12 +26,4 @@ target_include_directories(syBlast
         $<INSTALL_INTERFACE:include>
 )
 
-if(MSVC)
-    target_compile_options(syBlast PRIVATE
-        /O3
-        /GL
-    )
-else()
-    set(CMAKE_CXX_FLAGS -O3)
-endif()
-add_library(syBlast::syBlast ALIAS syBlast)
+add_library(syBlast::${TARGET_NAME} ALIAS ${TARGET_NAME})
