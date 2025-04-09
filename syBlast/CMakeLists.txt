@@ -1,6 +1,6 @@
 set(SOURCE_FILES 
-    kernels/axpy.cpp
-    kernels/scal.cpp
+    kernels/vectorScaling.cpp
+    kernels/dot.cpp
     )
 
 set(TARGET_NAME syBlast)
@@ -20,10 +20,10 @@ set_target_properties(${TARGET_NAME} PROPERTIES COMPILE_FLAGS "${COMPILE_FLAGS}"
 set_target_properties(${TARGET_NAME} PROPERTIES LINK_FLAGS "${LINK_FLAGS}")
 
 
-target_include_directories(syBlast
+target_include_directories(${TARGET_NAME}
     PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/..>
         $<INSTALL_INTERFACE:include>
 )
 
-add_library(syBlast::${TARGET_NAME} ALIAS ${TARGET_NAME})
+add_library(${TARGET_NAME}::${TARGET_NAME} ALIAS ${TARGET_NAME})

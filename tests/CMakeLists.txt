@@ -1,15 +1,16 @@
-# CMakeLists.txt for tests
+set(EXECUTABLE_NAME test_Validation)
 
-# Add test executable
-add_executable(test_temp test_temp.cpp)
-
-# Link GoogleTest to the test executable
-target_link_libraries(test_temp gtest gtest_main 
-syBlast
+add_executable(${EXECUTABLE_NAME} 
+  test_vectorScaling.cpp
+  test_dot.cpp
 )
 
-# Enable testing
+target_link_libraries(${EXECUTABLE_NAME}
+  gtest
+  gtest_main
+  syBlast
+)
+
 enable_testing()
 
-# Add test
-add_test(NAME test_temp COMMAND test_temp)
+add_test(NAME ${EXECUTABLE_NAME} COMMAND ${EXECUTABLE_NAME})
