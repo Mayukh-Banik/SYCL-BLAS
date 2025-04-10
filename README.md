@@ -56,15 +56,22 @@ git clone https://github.com/Mayukh-Banik/SYCL-BLAS
 ## TODO
 AXPY functions are complete for basic case, everything else must be developed.
 
+Docker run
+
+```
+sudo docker build -t syblast-app .
+sudo docker run --rm syblast-app
+```
+
 ## Contributions
 
-Current pull and push request formats are undecided, but any help is greatly appreciated! The end goal is to be like [CLBlast](https://github.com/CNugteren/CLBlast) where there's automatic tuning for SYCL platforms. This is very much a work in progress, and I'm planning on making this challenge Intel's MKL library, so any help is greatly appreciated, from documentation to multiplatform building.
+Current pull and push request formats are undecided, but any help is greatly appreciated! The end goal is to be like [CLBlast](https://github.com/CNugteren/CLBlast) where there's automatic tuning for SYCL platforms.
 
 ## Credits
 
 This software uses the following open source packages:
 
--[AdaptiveCPP](https://github.com/AdaptiveCpp/AdaptiveCpp)
+<!-- -[AdaptiveCPP](https://github.com/AdaptiveCpp/AdaptiveCpp) -->
 <!-- - [Electron](http://electron.atom.io/)
 - [Node.js](https://nodejs.org/)
 - [Marked - a markdown parser](https://github.com/chjj/marked)
