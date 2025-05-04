@@ -1,5 +1,5 @@
-#include "../syBlast_template.hpp"
 #include "../syBlast.hpp"
+#include "vectorScaling.hpp"
 
 namespace syBlast
 {
@@ -32,10 +32,10 @@ namespace syBlast
 
     void caxpy(
         const uint64_t N,
-        const std::complex<float> alpha,
-        const std::complex<float> *x,
+        const sycl::Complex<float> alpha,
+        const sycl::Complex<float> *x,
         const int incx,
-        std::complex<float> *y,
+        sycl::Complex<float> *y,
         const int incy,
         sycl::queue &q)
     {
@@ -44,10 +44,10 @@ namespace syBlast
 
     void zaxpy(
         const uint64_t N,
-        const std::complex<double> alpha,
-        const std::complex<double> *x,
+        const sycl::Complex<double> alpha,
+        const sycl::Complex<double> *x,
         const int incx,
-        std::complex<double> *y,
+        sycl::Complex<double> *y,
         const int incy,
         sycl::queue &q)
     {
@@ -78,9 +78,9 @@ namespace syBlast
 
     void ccopy(
         const uint64_t N,
-        const std::complex<float> *x,
+        const sycl::Complex<float> *x,
         const int incx,
-        std::complex<float> *y,
+        sycl::Complex<float> *y,
         const int incy,
         sycl::queue &q)
     {
@@ -89,9 +89,9 @@ namespace syBlast
 
     void zcopy(
         const uint64_t N,
-        const std::complex<double> *x,
+        const sycl::Complex<double> *x,
         const int incx,
-        std::complex<double> *y,
+        sycl::Complex<double> *y,
         const int incy,
         sycl::queue &q)
     {
@@ -121,7 +121,7 @@ namespace syBlast
     void cscal(
         const uint64_t N,
         const float alpha,
-        std::complex<float> *x,
+        sycl::Complex<float> *x,
         const int incx,
         sycl::queue &q)
     {
@@ -131,7 +131,7 @@ namespace syBlast
     void zscal(
         const uint64_t N,
         const double alpha,
-        std::complex<double> *x,
+        sycl::Complex<double> *x,
         const int incx,
         sycl::queue &q)
     {
@@ -140,8 +140,8 @@ namespace syBlast
 
     void csscal(
         const uint64_t N,
-        const std::complex<float> alpha,
-        std::complex<float> *x,
+        const sycl::Complex<float> alpha,
+        sycl::Complex<float> *x,
         const int incx,
         sycl::queue &q)
     {
@@ -150,8 +150,8 @@ namespace syBlast
 
     void zdscal(
         const uint64_t N,
-        const std::complex<double> alpha,
-        std::complex<double> *x,
+        const sycl::Complex<double> alpha,
+        sycl::Complex<double> *x,
         const int incx,
         sycl::queue &q)
     {
@@ -182,9 +182,9 @@ namespace syBlast
 
     void cswap(
         const uint64_t N,
-        std::complex<float> *x,
+        sycl::Complex<float> *x,
         const int incx,
-        std::complex<float> *y,
+        sycl::Complex<float> *y,
         const int incy,
         sycl::queue &q)
     {
@@ -193,9 +193,9 @@ namespace syBlast
 
     void zswap(
         const uint64_t N,
-        std::complex<double> *x,
+        sycl::Complex<double> *x,
         const int incx,
-        std::complex<double> *y,
+        sycl::Complex<double> *y,
         const int incy,
         sycl::queue &q)
     {

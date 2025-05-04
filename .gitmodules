@@ -4,3 +4,6 @@
 [submodule "extern/doxygen-awesome-css"]
 	path = extern/doxygen-awesome-css
 	url = https://github.com/jothepro/doxygen-awesome-css.git
+[submodule "extern/SyComplex"]
+	path = extern/SyComplex
+	url = https://github.com/Mayukh-Banik/SyComplex.git

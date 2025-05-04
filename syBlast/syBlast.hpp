@@ -2,7 +2,7 @@
 
 #include <sycl/sycl.hpp>
 #include <cstdint>
-#include <complex>
+#include "syComplex.hpp"
 
 namespace syBlast
 {
@@ -44,7 +44,7 @@ namespace syBlast
      * @param incy  Stride between elements in y
      * @param q     SYCL queue for execution
      */
-    void caxpy(const uint64_t N, const std::complex<float> alpha, const std::complex<float> *x, const int incx, std::complex<float> *y, const int incy, sycl::queue &q);
+    void caxpy(const uint64_t N, const sycl::Complex<float> alpha, const sycl::Complex<float> *x, const int incx, sycl::Complex<float> *y, const int incy, sycl::queue &q);
 
     /**
      * y := alpha * x + y
@@ -57,7 +57,7 @@ namespace syBlast
      * @param incy  Stride between elements in y
      * @param q     SYCL queue for execution
      */
-    void zaxpy(const uint64_t N, const std::complex<double> alpha, const std::complex<double> *x, const int incx, std::complex<double> *y, const int incy, sycl::queue &q);
+    void zaxpy(const uint64_t N, const sycl::Complex<double> alpha, const sycl::Complex<double> *x, const int incx, sycl::Complex<double> *y, const int incy, sycl::queue &q);
 
     /**
      * x := alpha * x
@@ -90,7 +90,7 @@ namespace syBlast
      * @param incx  Stride between elements in x
      * @param q     SYCL queue for execution
      */
-    void cscal(const uint64_t N, const float alpha, std::complex<float> *x, const int incx, sycl::queue &q);
+    void cscal(const uint64_t N, const float alpha, sycl::Complex<float> *x, const int incx, sycl::queue &q);
 
     /**
      * x := alpha * x
@@ -101,7 +101,7 @@ namespace syBlast
      * @param incx  Stride between elements in x
      * @param q     SYCL queue for execution
      */
-    void zscal(const uint64_t N, const double alpha, std::complex<double> *x, const int incx, sycl::queue &q);
+    void zscal(const uint64_t N, const double alpha, sycl::Complex<double> *x, const int incx, sycl::queue &q);
 
     /**
      * x := alpha * x
@@ -112,7 +112,7 @@ namespace syBlast
      * @param incx  Stride between elements in x
      * @param q     SYCL queue for execution
      */
-    void csscal(const uint64_t N, const std::complex<float> alpha, std::complex<float> *x, const int incx, sycl::queue &q);
+    void csscal(const uint64_t N, const sycl::Complex<float> alpha, sycl::Complex<float> *x, const int incx, sycl::queue &q);
 
     /**
      * x := alpha * x
@@ -123,7 +123,7 @@ namespace syBlast
      * @param incx  Stride between elements in x
      * @param q     SYCL queue for execution
      */
-    void zdscal(const uint64_t N, const std::complex<double> alpha, std::complex<double> *x, const int incx, sycl::queue &q);
+    void zdscal(const uint64_t N, const sycl::Complex<double> alpha, sycl::Complex<double> *x, const int incx, sycl::queue &q);
 
     /**
      * y := x
@@ -162,7 +162,7 @@ namespace syBlast
      * @param incy  Stride between elements in y
      * @param q     SYCL queue for execution
      */
-    void ccopy(const uint64_t N, const std::complex<float> *x, const int incx, std::complex<float> *y, const int incy, sycl::queue &q);
+    void ccopy(const uint64_t N, const sycl::Complex<float> *x, const int incx, sycl::Complex<float> *y, const int incy, sycl::queue &q);
 
     /**
      * y := x
@@ -175,7 +175,7 @@ namespace syBlast
      * @param incy  Stride between elements in y
      * @param q     SYCL queue for execution
      */
-    void zcopy(const uint64_t N, const std::complex<double> *x, const int incx, std::complex<double> *y, const int incy, sycl::queue &q);
+    void zcopy(const uint64_t N, const sycl::Complex<double> *x, const int incx, sycl::Complex<double> *y, const int incy, sycl::queue &q);
 
     /**
      * y <--> x
@@ -214,7 +214,7 @@ namespace syBlast
      * @param incy  Stride between elements in y
      * @param q     SYCL queue for execution
      */
-    void cswap(const uint64_t N, std::complex<float> *x, const int incx, std::complex<float> *y, const int incy, sycl::queue &q);
+    void cswap(const uint64_t N, sycl::Complex<float> *x, const int incx, sycl::Complex<float> *y, const int incy, sycl::queue &q);
 
     /**
      * y <--> x
@@ -227,21 +227,37 @@ namespace syBlast
      * @param incy  Stride between elements in y
      * @param q     SYCL queue for execution
      */
-    void zswap(const uint64_t N, std::complex<double> *x, const int incx, std::complex<double> *y, const int incy, sycl::queue &q);
+    void zswap(const uint64_t N, sycl::Complex<double> *x, const int incx, sycl::Complex<double> *y, const int incy, sycl::queue &q);
 
     float sdot(const uint64_t N, const float *x, const int incx, const float *y, const int incy, sycl::queue &q);
 
     double ddot(const uint64_t N, const double *x, const int incx, const double *y, const int incy, sycl::queue &q);
 
-    std::complex<float> cdotu(const uint64_t N, const std::complex<float> *x, const int incx, const std::complex<float> *y, const int incy, sycl::queue &q);
+    sycl::Complex<float> cdotu(const uint64_t N, const sycl::Complex<float> *x, const int incx, const sycl::Complex<float> *y, const int incy, sycl::queue &q);
 
-    std::complex<double> zdotu(const uint64_t N, const std::complex<double> *x, const int incx, const std::complex<double> *y, const int incy, sycl::queue &q);
+    sycl::Complex<double> zdotu(const uint64_t N, const sycl::Complex<double> *x, const int incx, const sycl::Complex<double> *y, const int incy, sycl::queue &q);
 
-    std::complex<float> cdotc(const uint64_t N, const std::complex<float> *x, const int incx, const std::complex<float> *y, const int incy, sycl::queue &q);
+    sycl::Complex<float> cdotc(const uint64_t N, const sycl::Complex<float> *x, const int incx, const sycl::Complex<float> *y, const int incy, sycl::queue &q);
 
-    std::complex<double> zdotc(const uint64_t N, const std::complex<double> *x, const int incx, const std::complex<double> *y, const int incy, sycl::queue &q);
+    sycl::Complex<double> zdotc(const uint64_t N, const sycl::Complex<double> *x, const int incx, const sycl::Complex<double> *y, const int incy, sycl::queue &q);
 
     float sdsdot(const uint64_t N, const float alpha, const float *x, const int incx, const float *y, const int incy, sycl::queue &q);
 
     float dsdot(const uint64_t N, const double *x, const int incx, const float *y, const int incy, sycl::queue &q);
+
+    float snrm2(const uint64_t N, const float* x, const int incx, sycl::queue& q);
+
+    float dnrm2(const uint64_t N, const double* x, const int incx, sycl::queue& q);
+
+    sycl::Complex<float> scnrm2(const uint64_t N, const sycl::Complex<float>* x, const int incx, sycl::queue& q);
+
+    sycl::Complex<double> dznrm2(const uint64_t N, const sycl::Complex<double>* x, const int incx, sycl::queue& q);
+
+    float sasum(const uint64_t N, const float* x, const int incx, sycl::queue& q);
+
+    float dasum(const uint64_t N, const double* x, const int incx, sycl::queue& q);
+
+    sycl::Complex<float> scasum(const uint64_t N, const sycl::Complex<float>* x, const int incx, sycl::queue& q);
+    
+    sycl::Complex<double> dzasum(const uint64_t N, const sycl::Complex<double>* x, const int incx, sycl::queue& q);
 }

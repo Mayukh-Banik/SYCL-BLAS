@@ -2,3 +2,5 @@ build
 .vscode
 .vscode/
 docs
+*temp*
+*.out

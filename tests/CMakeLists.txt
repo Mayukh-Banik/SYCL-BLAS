@@ -1,9 +1,8 @@
-set(EXECUTABLE_NAME test_Validation)
+set(EXECUTABLE_NAME validationTests)
 
 add_executable(${EXECUTABLE_NAME} 
   test_vectorScaling.cpp
   test_dot.cpp
-  test_Complex.cpp
 )
 
 target_link_libraries(${EXECUTABLE_NAME}

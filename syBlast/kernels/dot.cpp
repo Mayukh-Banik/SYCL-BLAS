@@ -1,5 +1,5 @@
-#include "../syBlast_template.hpp"
 #include "../syBlast.hpp"
+#include "dot.hpp"
 
 namespace syBlast
 {
@@ -27,44 +27,44 @@ namespace syBlast
         return dot(N, x, incx, y, incy, q);
     }
 
-    std::complex<float> cdotu(
+    sycl::Complex<float> cdotu(
         const uint64_t N,
-        const std::complex<float> *x,
+        const sycl::Complex<float> *x,
         const int incx,
-        const std::complex<float> *y,
+        const sycl::Complex<float> *y,
         const int incy,
         sycl::queue &q)
     {
         return dot(N, x, incx, y, incy, q);
     }
 
-    std::complex<double> zdotu(
+    sycl::Complex<double> zdotu(
         const uint64_t N,
-        const std::complex<double> *x,
+        const sycl::Complex<double> *x,
         const int incx,
-        const std::complex<double> *y,
+        const sycl::Complex<double> *y,
         const int incy,
         sycl::queue &q)
     {
         return dot(N, x, incx, y, incy, q);
     }
 
-    std::complex<float> cdotc(
+    sycl::Complex<float> cdotc(
         const uint64_t N,
-        const std::complex<float> *x,
+        const sycl::Complex<float> *x,
         const int incx,
-        const std::complex<float> *y,
+        const sycl::Complex<float> *y,
         const int incy,
         sycl::queue &q)
     {
         return dotc(N, x, incx, y, incy, q);
     }
 
-    std::complex<double> zdotc(
+    sycl::Complex<double> zdotc(
         const uint64_t N,
-        const std::complex<double> *x,
+        const sycl::Complex<double> *x,
         const int incx,
-        const std::complex<double> *y,
+        const sycl::Complex<double> *y,
         const int incy,
         sycl::queue &q)
     {

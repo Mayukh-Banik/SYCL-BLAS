@@ -1,6 +1,7 @@
 set(SOURCE_FILES 
     kernels/vectorScaling.cpp
     kernels/dot.cpp
+    kernels/nrmsetc.cpp
     )
 
 set(TARGET_NAME syBlast)
